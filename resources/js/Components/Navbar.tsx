@@ -299,7 +299,7 @@ function Navbar() {
                         </a>
 
                         <a href="#">
-                            <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 active:bg-neutral-50">
+                            <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
                                 Login
                             </button>
                         </a>
