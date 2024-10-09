@@ -36,7 +36,7 @@ jobs:
             cd domains
             cd homeworkcheap.com
             git pull
-            php composer.phar install
+            composer2 install
             php artisan migrate --force
       - name: Install SSH key
         run: |
