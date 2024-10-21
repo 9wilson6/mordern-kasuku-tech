@@ -291,6 +291,7 @@ function Navbar() {
                             isOpen ? "" : "hidden"
                         }`}
                     >
+                        
                         {/* <a
                             href="#"
                             className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
