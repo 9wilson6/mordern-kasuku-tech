@@ -291,7 +291,7 @@ function Navbar() {
                             isOpen ? "" : "hidden"
                         }`}
                     >
-                        <a
+                        {/* <a
                             href="#"
                             className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
                         >
@@ -302,7 +302,7 @@ function Navbar() {
                             <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
                                 Login
                             </button>
-                        </a>
+                        </a> */}
                     </div>
                     <button
                         className="absolute right-5 lg:hidden"
