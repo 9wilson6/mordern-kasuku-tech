@@ -19,11 +19,11 @@ const Services: React.FC<ServicesProps> = ({
     subheading,
 }) => {
     return (
-        <section className="bg-white ">
+        <section className="bg-white py-10">
             <div className="relative">
-                <div className="  py-12 sm:py-16 lg:py-20 top-0 -z-10 h-full w-full bg-white">
+                <div className="container mx-auto sm:px-10 md:px-12 lg:px-5 px-5 w-full bg-white">
                     <div className=" absolute bottom-auto left-[50%] top-[50%] h-[500px] w-[500px] -translate-x-[50%] translate-y-[-40%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
-                    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-lg">
+                    <div className="mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
                                 {heading}

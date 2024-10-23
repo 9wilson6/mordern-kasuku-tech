@@ -5,9 +5,9 @@ function Hero() {
         <div>
             <header>
                 {/* Hero Container */}
-                <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
+                <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-16 md:py-20">
                     {/* Component */}
-                    <div className="mx-auto mb-8 w-full max-w-3xl text-center md:mb-12 lg:mb-16">
+                    <div className="mx-auto mb-8 w-full max-w-7xl text-center md:mb-12 lg:mb-16">
                         {/* Hero Title */}
                         <h1 className="mb-4 text-3xl font-bold md:text-5xl tracking-widest">
                             <span className="text-totred block leading-loose text-6xl">

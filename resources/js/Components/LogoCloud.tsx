@@ -5,7 +5,7 @@ const LogoCloud = () => {
     return (
         <section >
             {/*Container */}
-            <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 ">
+            <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-16  ">
                 {/*Title */}
                 <h5 className=" text-center text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl pb-12">
                     Brands that have trusted us

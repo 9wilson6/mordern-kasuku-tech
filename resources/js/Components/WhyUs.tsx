@@ -14,7 +14,7 @@ const WhyUsItem: React.FC<WhyUsItemProps> = ({
     imageUrl,
 }) => {
     return (
-        <div className="sticky flex flex-col mx-auto max-w-6xl top-0 h-[500px] mb-24 rounded-t-[46px] border-t border-black bg-white px-5 py-10 sm:px-20">
+        <div className="sticky flex flex-col mx-auto max-w-7xl top-0 h-[500px] mb-24 rounded-t-[46px] border-t border-black bg-white px-5 py-10 sm:px-20">
             <div className="mb-14 flex gap-8  font-bold text-totblue text-xl md:text-3xl ">
                 <p className="text-totred">{number}</p>
                 <p className="">{title}</p>

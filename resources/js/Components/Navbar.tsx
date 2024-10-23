@@ -7,7 +7,7 @@ function Navbar() {
 
     return (
         <section>
-            <nav className="font-inter mx-auto h-auto w-full max-w-screen-2xl lg:relative lg:top-0">
+            <nav className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full lg:relative lg:top-0">
                 <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
                     <Logo />
                     <div
