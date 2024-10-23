@@ -30,7 +30,8 @@ export default function Welcome({
 
     return (
         <div className="h-full w-full">
-            <Head title="Welcome" />
+            <Head title="Welcome to KasukuTech" />
+
             <Navbar />
             <Hero />
             <CallToAction

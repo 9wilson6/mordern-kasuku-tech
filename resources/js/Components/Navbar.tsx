@@ -15,7 +15,7 @@ function Navbar() {
                             isOpen ? "" : "hidden"
                         }`}
                     >
-                        <div className="relative flex flex-col">
+                        {/* <div className="relative flex flex-col">
                             <button
                                 onClick={() => setMenuOne(!menuOne)}
                                 className={`flex flex-row rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800 ${
@@ -36,12 +36,12 @@ function Navbar() {
                             </button>
                             {menuOne && (
                                 <div className="z-50 flex w-full flex-col rounded-lg px-5 py-5 lg:absolute lg:top-20 lg:left-[-50%] lg:w-[800px] bg-gray-100 lg:flex-row lg:flex-wrap lg:py-7 xl:w-[950px]">
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -65,7 +65,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Analytics
                                         </h2>
@@ -74,12 +74,12 @@ function Navbar() {
                                             your traffic is coming from
                                         </p>
                                     </a>
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -103,7 +103,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Engagement
                                         </h2>
@@ -112,12 +112,12 @@ function Navbar() {
                                             a more meaningful way
                                         </p>
                                     </a>
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -141,7 +141,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Automations
                                         </h2>
@@ -150,12 +150,12 @@ function Navbar() {
                                             drive your customers to convert
                                         </p>
                                     </a>
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -179,7 +179,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Security
                                         </h2>
@@ -188,12 +188,12 @@ function Navbar() {
                                             secure
                                         </p>
                                     </a>
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -217,7 +217,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Integrations
                                         </h2>
@@ -226,12 +226,12 @@ function Navbar() {
                                             you’re already using
                                         </p>
                                     </a>
-                                    {/* ITEM */}
+                                    ITEM
                                     <a
                                         className="flex grow flex-col rounded-lg px-5 py-5 lg:basis-60 xl:px-8"
                                         href="#"
                                     >
-                                        {/* ICON */}
+                                        ICON
                                         <div className="relative">
                                             <svg
                                                 width="40"
@@ -255,7 +255,7 @@ function Navbar() {
                                                 />
                                             </svg>
                                         </div>
-                                        {/* TEXT */}
+                                        TEXT
                                         <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
                                             Reports
                                         </h2>
@@ -266,7 +266,7 @@ function Navbar() {
                                     </a>
                                 </div>
                             )}
-                        </div>
+                        </div> */}
                         <a
                             href="#"
                             className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
@@ -291,7 +291,8 @@ function Navbar() {
                             isOpen ? "" : "hidden"
                         }`}
                     >
-                        <a
+                        
+                        {/* <a
                             href="#"
                             className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
                         >
@@ -302,8 +303,13 @@ function Navbar() {
                             <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
                                 Login
                             </button>
+<<<<<<< HEAD
                         </a>
                     </div> */}
+=======
+                        </a> */}
+                    </div>
+>>>>>>> 5d003af2cb3bf3da82d1c688af13d3591e8296ce
                     <button
                         className="absolute right-5 lg:hidden"
                         onClick={() => {
