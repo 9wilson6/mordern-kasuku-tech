@@ -286,7 +286,7 @@ function Navbar() {
                             FAQs
                         </a>
                     </div>
-                    {/* <div
+                    <div
                         className={`flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0 ${
                             isOpen ? "" : "hidden"
                         }`}
@@ -303,13 +303,8 @@ function Navbar() {
                             <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
                                 Login
                             </button>
-<<<<<<< HEAD
-                        </a>
-                    </div> */}
-=======
                         </a> */}
                     </div>
->>>>>>> 5d003af2cb3bf3da82d1c688af13d3591e8296ce
                     <button
                         className="absolute right-5 lg:hidden"
                         onClick={() => {
