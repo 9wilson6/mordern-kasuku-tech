@@ -34,10 +34,13 @@ jobs:
           script_stop: true
           script: |
             cd domains
-            cd homeworkcheap.com
-            git pull
+            cd kasukutech.com
+            git pull 
             composer2 install
             php artisan migrate --force
+            php artisan cache:clear
+            php artisan route:clear
+            php artisan optimize
       - name: Install SSH key
         run: |
           mkdir -p ~/.ssh/
@@ -46,4 +49,4 @@ jobs:
           ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Copy Build Files to Target Server
         run: |
-          rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/homeworkcheap.com/public/build
+          rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/kasukutech.com/public/build
