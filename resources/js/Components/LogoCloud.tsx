@@ -23,7 +23,7 @@ const LogoCloud = () => {
                             className="max-w-full items-center justify-center sm:max-w-[80%]"
                         />
 
-                        <span className="text-3xl font-extrabold text-gray-400 font-mono">
+                        <span className="text-xl md:text-3xl font-extrabold text-gray-400 font-mono">
                             {" "}
                             PerfectGrader
                         </span>
@@ -38,7 +38,7 @@ const LogoCloud = () => {
                             <span className="w-3 h-6 rounded-r-full flex bg-cyan-700 mt-2"></span>
                         </span>
 
-                        <span className="text-3xl font-thin text-gray-400 font-['Serif'] ms-3">
+                        <span className="text-xl md:text-3xl font-thin text-gray-400 font-['Serif'] ms-3">
                             {" "}
                             CredibleTutors
                         </span>
@@ -53,25 +53,25 @@ const LogoCloud = () => {
                             alt=""
                             className="max-w-full sm:max-w-[80%]"
                         />
-                        <span className="text-2xl font-extrabold text-gray-400 font-sans ms-3">
+                        <span className="text-xl md:text-3xl font-extrabold text-gray-400 font-sans ms-3">
                             {" "}
                             African-Real-Estate
                         </span>
                     </a>
                     <a href="#" className="flex items-center justify-center">
-                        <span className="text-3xl font-extrabold text-gray-400 font-sans ms-3">
+                        <span className="text-xl md:text-3xl font-extrabold text-gray-400 font-sans ms-3">
                             {" "}
                             PerfectExperts
                         </span>
                     </a>
                     <a href="#" className="flex items-center justify-center">
-                        <span className="text-3xl font-extrabold text-gray-400 font-['Lucida_Console'] ms-3">
+                        <span className="text-xl md:text-3xl font-extrabold text-gray-400 font-['Lucida_Console'] ms-3">
                             {" "}
                             Gift Real Estate
                         </span>
                     </a>
                     <a href="#" className="flex items-center justify-center">
-                        <span className="text-3xl font-extrabold text-gray-400 font-['Arial'] ms-3">
+                        <span className="text-xl md:text-3xl font-extrabold text-gray-400 font-['Arial'] ms-3">
                             {" "}
                             Diamonds Fashion
                         </span>
