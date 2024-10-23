@@ -41,6 +41,7 @@ jobs:
             php artisan cache:clear
             php artisan route:clear
             php artisan optimize
+            php artisan cache
       - name: Install SSH key
         run: |
           mkdir -p ~/.ssh/
