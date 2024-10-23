@@ -286,7 +286,7 @@ function Navbar() {
                             FAQs
                         </a>
                     </div>
-                    <div
+                    {/* <div
                         className={`flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0 ${
                             isOpen ? "" : "hidden"
                         }`}
@@ -303,7 +303,7 @@ function Navbar() {
                                 Login
                             </button>
                         </a>
-                    </div>
+                    </div> */}
                     <button
                         className="absolute right-5 lg:hidden"
                         onClick={() => {
