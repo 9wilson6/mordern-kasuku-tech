@@ -11,7 +11,7 @@ const LogoCloud = () => {
                     Brands that have trusted us
                 </h5>
                 {/*Content */}
-                <div className="grid grid-cols-2 items-center justify-center gap-8 rounded-md bg-gray-100  p-16 px-8 py-12 sm:grid-cols-3 md:gap-16">
+                <div className="grid lg:grid-cols-3 items-center justify-center gap-8 rounded-md bg-gray-100  p-16 px-8 py-12  md:gap-16">
                     <a
                         href="https://perfectgrader.com/"
                         className="flex items-center justify-center"
