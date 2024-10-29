@@ -267,7 +267,7 @@ function Navbar() {
                                 </div>
                             )}
                         </div> */}
-                        <a
+                        {/* <a
                             href="#"
                             className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
                         >
@@ -284,7 +284,7 @@ function Navbar() {
                             className="font-inter lg: rounded-lg pb-8 lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
                         >
                             FAQs
-                        </a>
+                        </a> */}
                     </div>
                     <div
                         className={`flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0 ${
