@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>New Contact Message</title>
+    <title>{{$subject}}</title>
 </head>
 <body>
     <h1>Contact Message</h1>

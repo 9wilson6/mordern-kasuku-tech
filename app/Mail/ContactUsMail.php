@@ -16,15 +16,17 @@ class ContactUsMail extends Mailable
     public $name;
     public $email;
     public $messageContent;
+    public $subject;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($name, $email, $messageContent)
+    public function __construct($name, $email, $messageContent, $subject)
     {
         $this->name = $name;
         $this->email = $email;
         $this->messageContent = $messageContent;
+        $this->subject = $subject;
     }
 
     /**
@@ -32,11 +34,12 @@ class ContactUsMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Contact Message')
+        return $this->subject($this->subject)
                     ->view('mail.contact-us')->with([
                         'name' => $this->name,
                         'email' => $this->email,
                         'messageContent' => $this->messageContent,
+                        'subject' => $this->subject,
                     ]);
     }
 }

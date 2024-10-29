@@ -8,12 +8,13 @@ const Contact = () => {
         name: "",
         email: "",
         message: "",
+        subject: "",
     });
 
     // Handle success feedback state
     const [successMessage, setSuccessMessage] = useState("");
 
-    const handleSubmit = async (e : React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         try {
@@ -204,6 +205,29 @@ const Contact = () => {
                                     {errors.email && (
                                         <p className="text-red-500 text-sm">
                                             {errors.email}
+                                        </p>
+                                    )}
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="subject"
+                                        className="mb-1 font-medium"
+                                    >
+                                        Email Subject
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        value={data.name}
+                                        onChange={(e) =>
+                                            setData("subject", e.target.value)
+                                        }
+                                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
+                                    />
+                                    {errors.name && (
+                                        <p className="text-red-500 text-sm">
+                                            {errors.subject}
                                         </p>
                                     )}
                                 </div>
