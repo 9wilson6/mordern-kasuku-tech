@@ -164,7 +164,7 @@ const Contact = () => {
                                 onSubmit={handleSubmit}
                                 className="mx-auto mb-4 max-w-sm text-left"
                             >
-                                <div>
+                                <div className="mb-2">
                                     <label
                                         htmlFor="name"
                                         className="mb-1 font-medium"
@@ -209,17 +209,17 @@ const Contact = () => {
                                     )}
                                 </div>
 
-                                <div>
+                                <div className="mb-2">
                                     <label
                                         htmlFor="subject"
                                         className="mb-1 font-medium"
                                     >
-                                        Email Subject
+                                         Project Title
                                     </label>
                                     <input
                                         type="text"
                                         id="subject"
-                                        value={data.name}
+                                        value={data.subject}
                                         onChange={(e) =>
                                             setData("subject", e.target.value)
                                         }
