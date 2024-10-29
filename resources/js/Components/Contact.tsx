@@ -1,6 +1,40 @@
-import React from "react";
+import { useForm } from "@inertiajs/react";
+import axios from "axios";
+import { useState } from "react";
 
 const Contact = () => {
+    // Define form state and form submission
+    const { data, setData, post, reset, processing, errors } = useForm({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    // Handle success feedback state
+    const [successMessage, setSuccessMessage] = useState("");
+
+    const handleSubmit = async (e : React.FormEvent) => {
+        e.preventDefault();
+
+        try {
+            // Submit form data to the /contact route using Inertia
+            await post("/contact", {
+                onSuccess: () => {
+                    // Set success message and reset form
+                    setSuccessMessage(
+                        "Your message has been sent successfully!"
+                    );
+                    reset();
+                },
+                onError: () => {
+                    setSuccessMessage(""); // Clear any previous success message on error
+                },
+                preserveScroll: true,
+            });
+        } catch (error) {
+            console.error("Form submission error:", error);
+        }
+    };
     return (
         <section>
             <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full top-0 z-[-2]  bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
@@ -101,10 +135,10 @@ const Contact = () => {
                                 />
                                 <div className="flex flex-col">
                                     <h6 className="text-base font-bold">
-                                        Laila Bahar
+                                        Ken Smith
                                     </h6>
                                     <p className="text-sm text-gray-500">
-                                        Designer
+                                        Realtor
                                     </p>
                                 </div>
                             </div>
@@ -118,55 +152,91 @@ const Contact = () => {
                                 to help you bring your project to life, offering
                                 tailored solutions and exceptional service.
                             </p>
-                            {/* Form */}
+                            {/* Success Message */}
+                            {successMessage && (
+                                <p className="mb-4 text-green-500">
+                                    {successMessage}
+                                </p>
+                            )}
+
                             <form
+                                onSubmit={handleSubmit}
                                 className="mx-auto mb-4 max-w-sm text-left"
-                                name="wf-form-password"
-                                method="get"
                             >
                                 <div>
                                     <label
-                                        htmlFor="name-2"
+                                        htmlFor="name"
                                         className="mb-1 font-medium"
                                     >
                                         Your Name
                                     </label>
                                     <input
                                         type="text"
+                                        id="name"
+                                        value={data.name}
+                                        onChange={(e) =>
+                                            setData("name", e.target.value)
+                                        }
                                         className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
                                     />
+                                    {errors.name && (
+                                        <p className="text-red-500 text-sm">
+                                            {errors.name}
+                                        </p>
+                                    )}
                                 </div>
                                 <div className="mb-2">
                                     <label
-                                        htmlFor="name-2"
+                                        htmlFor="email"
                                         className="mb-1 font-medium"
                                     >
                                         Email Address
                                     </label>
                                     <input
-                                        type="text"
+                                        type="email"
+                                        id="email"
+                                        value={data.email}
+                                        onChange={(e) =>
+                                            setData("email", e.target.value)
+                                        }
                                         className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
                                     />
+                                    {errors.email && (
+                                        <p className="text-red-500 text-sm">
+                                            {errors.email}
+                                        </p>
+                                    )}
                                 </div>
                                 <div className="mb-5 md:mb-6 lg:mb-8">
                                     <label
-                                        htmlFor="field-3"
+                                        htmlFor="message"
                                         className="mb-1 font-medium"
                                     >
                                         Project Brief
                                     </label>
                                     <textarea
-                                        placeholder=""
-                                        maxLength={500}
-                                        name="field"
+                                        id="message"
+                                        value={data.message}
+                                        onChange={(e) =>
+                                            setData("message", e.target.value)
+                                        }
                                         className="mb-2.5 block h-auto min-h-32 w-full rounded-md border border-solid border-black p-3 text-sm text-black"
                                     ></textarea>
+                                    {errors.message && (
+                                        <p className="text-red-500 text-sm">
+                                            {errors.message}
+                                        </p>
+                                    )}
                                 </div>
-                                <input
+                                <button
                                     type="submit"
-                                    value="Get free quote"
+                                    disabled={processing}
                                     className="inline-block w-full cursor-pointer rounded-md bg-black px-6 py-3 text-center font-semibold text-white"
-                                />
+                                >
+                                    {processing
+                                        ? "Sending..."
+                                        : "Get free quote"}
+                                </button>
                             </form>
                         </div>
                     </div>
