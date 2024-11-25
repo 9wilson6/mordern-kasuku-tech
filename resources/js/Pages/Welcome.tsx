@@ -8,9 +8,6 @@ import Services from "@/Components/Services";
 import WhyUs from "@/Components/WhyUs";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
-import { FaLaptopCode } from "react-icons/fa";
-import { GiMeshNetwork } from "react-icons/gi";
-import { MdOutlineViewInAr } from "react-icons/md";
 
 export default function Welcome({
     auth,
