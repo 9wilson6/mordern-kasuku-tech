@@ -4,17 +4,18 @@ import { TextLoop } from "./ui/textloop";
 
 function Hero() {
     const sentences = [
-        "Transform your mobile experience with cutting-edge app development.",
-        "Empower your business with scalable web applications and expert DevOps support.",
-        "Supercharge your online presence and dominate search results through proven SEO strategies.",
-        "Drive measurable results with innovative digital marketing tactics tailored for you.",
-        "Elevate your brand and captivate your audience through compelling creative design.",
-        "Unlock the hidden potential of your data with advanced data science solutions.",
-        "Revolutionize your business with the power of AI and machine learning innovations.",
-        "Fortify your digital fortress with robust, industry-leading cybersecurity services.",
-        "Streamline your operations and maximize efficiency with seamless cloud solutions.",
-        "Stay ahead of the curve with expert IT consulting that future-proofs your business.",
+        "Transform your mobile experience with apps.",
+        "Empower business with scalable web applications.",
+        "Supercharge your online presence with SEO.",
+        "Drive results with tailored marketing tactics.",
+        "Elevate your brand with creative design.",
+        "Unlock data potential with advanced solutions.",
+        "Revolutionize business with AI and ML.",
+        "Fortify your security with robust cybersecurity.",
+        "Streamline operations with seamless cloud solutions.",
+        "Stay ahead with expert IT consulting."
     ];
+    
 
     const colors = [
         "text-red-500",
@@ -48,7 +49,7 @@ function Hero() {
                                     Showcase your brand to the world
                                 </span>
                             </h1>
-                            <p className="mx-auto mb-5 max-w-lg   text-gray-500 sm:text-xl md:mb-6 lg:mb-8">
+                            <p className="mx-auto mb-5 max-w-lg text-sm  text-gray-500 sm:text-xl md:mb-6 lg:mb-8">
                                 <TextLoop interval={5} className="text-base">
                                     {sentences.map((sentence, index) => (
                                         <span
@@ -68,7 +69,7 @@ function Hero() {
                                 </TextLoop>
                             </p>
                             {/* Hero Button */}
-                            <div className="flex items-stretch justify-center">
+                            <div className="flex items-stretch justify-center mb-4">
                                 <a
                                     href="#contact"
                                     className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"

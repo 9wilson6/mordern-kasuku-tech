@@ -43,7 +43,7 @@ export function TextLoop({
   };
 
   return (
-    <div className={cn('relative inline-block whitespace-nowrap', className)}>
+    <div className={cn('relative inline-block whitespace-wrap', className)}>
       <AnimatePresence mode='popLayout' initial={false}>
         
         <motion.div
