@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
+import { Link } from "@inertiajs/react";
+import { Button } from "./ui/moving-border";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,8 +9,16 @@ function Navbar() {
 
     return (
         <section>
-            <nav className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full lg:relative lg:top-0">
-                <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
+            <div className="fixed top-0 z-10 left-0 right-0 bg-totblue-light text-white">
+                <div className="flex items-center justify-start py-2 max-w-5xl mx-auto px-6 space-x-6">
+                    <a href="mailto: contact@kasukutech.com">
+                        email: contact@kasukutech.com
+                    </a>
+                    <a href="tel:+254757306102"> tel: +254 757 306 102</a>
+                </div>
+            </div>
+            <nav className="container z-10 mt-6 sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full lg:relative lg:top-0">
+                <div className="flex flex-col  px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
                     <Logo />
                     <div
                         className={`mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0 ${
@@ -267,43 +277,55 @@ function Navbar() {
                                 </div>
                             )}
                         </div> */}
-                        {/* <a
-                            href="#"
-                            className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                        >
-                            Templates
-                        </a>
-                        <a
-                            href="#"
-                            className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                        >
-                            Pricing
-                        </a>
-                        <a
-                            href="#"
-                            className="font-inter lg: rounded-lg pb-8 lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                        >
-                            FAQs
-                        </a> */}
+                        {
+                            <>
+                                {" "}
+                                {/* <a
+                                    href="#"
+                                    className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
+                                >
+                                    Templates
+                                </a> */}
+                                <a
+                                    href="#"
+                                    className="font-inter z-10 rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
+                                >
+                                    Blog
+                                </a>
+                                {/* <a
+                                    href="#"
+                                    className="font-inter lg: rounded-lg pb-8 lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
+                                >
+                                    FAQs
+                                </a> */}
+                            </>
+                        }
                     </div>
                     <div
                         className={`flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0 ${
                             isOpen ? "" : "hidden"
                         }`}
                     >
-                        
-                        {/* <a
-                            href="#"
-                            className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                        >
-                            Sign Up
-                        </a>
-
-                        <a href="#">
-                            <button className="cursor-pointer rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
-                                Login
-                            </button>
-                        </a> */}
+                        {
+                            <div className="flex space-x-3 justify-center align-middle items-center">
+                                {" "}
+                                <div className="inline-block">
+                                    <Link href={route("register")}>
+                                        <Button className="group flex h-10  items-center justify-center rounded-md  font-bold bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
+                                            <span className="block group-active:[transform:translate3d(0,1px,0)]">
+                                                Hire Us Now
+                                            </span>
+                                        </Button>{" "}
+                                    </Link>
+                                </div>
+                                <Link href={route("login")}>
+                                    <button className="cursor-pointer  z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
+                                        Login
+                                    </button>
+                                </Link>{" "}
+                                <div></div>
+                            </div>
+                        }
                     </div>
                     <button
                         className="absolute right-5 lg:hidden"

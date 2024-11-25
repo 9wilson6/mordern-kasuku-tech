@@ -30,6 +30,7 @@ export default function Welcome({
             <Head title="Welcome to KasukuTech" />
 
             <Navbar />
+            
             <Hero />
             <CallToAction
                 title="Let us bring your Vision to Reality"
