@@ -9,7 +9,7 @@ function Navbar() {
 
     return (
         <section>
-            <div className="fixed top-0 z-10 left-0 right-0 bg-totblue-light text-white">
+            <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
                 <div className="flex items-center justify-start py-2 max-w-5xl mx-auto px-6 space-x-6">
                     <a href="mailto: contact@kasukutech.com">
                         email: contact@kasukutech.com
