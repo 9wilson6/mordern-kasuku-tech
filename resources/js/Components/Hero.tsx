@@ -39,7 +39,7 @@ function Hero() {
                     <div className="mx-auto mb-8 w-full max-w-7xl text-center md:mb-12 lg:mb-16">
                         {/* Hero Title */}
                         <h1 className="mb-4 text-3xl font-bold md:text-5xl tracking-widest">
-                            <span className="text-green-500 block leading-loose text-3xl md:text-6xl">
+                            <span className="text-green-500 block leading-loose text-6xl">
                                 {" "}
                                 Go Online!{" "}
                             </span>
