@@ -76,21 +76,21 @@ const Navbar = () => {
                             {/* Top line */}
                             <span
                                 aria-hidden="true"
-                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                className={`h-0.5 w-6 rounded bg-green-500 transition-all duration-300 ${
                                     openNavbar ? "rotate-45 translate-y-2" : ""
                                 }`}
                             />
                             {/* Middle line */}
                             <span
                                 aria-hidden="true"
-                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                className={`h-0.5 w-6 rounded bg-green-500 transition-all duration-300 ${
                                     openNavbar ? "opacity-0" : "opacity-100"
                                 }`}
                             />
                             {/* Bottom line */}
                             <span
                                 aria-hidden="true"
-                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                className={`h-0.5 w-6 rounded bg-green-500 transition-all duration-300 ${
                                     openNavbar
                                         ? "-rotate-45 -translate-y-2"
                                         : ""
@@ -144,7 +144,7 @@ const Navbar = () => {
                             {" "}
                             <div className="inline-block">
                                 <Link href={route("register")}>
-                                    <Button className="group flex h-8  items-center justify-center rounded-md  font-light bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
+                                    <Button className="group flex h-8  items-center justify-center rounded-md  font-light bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-2 md:px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
                                         <span className="inline-block  text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
                                             Hire Us{" "}
                                             <span className="hidden md:inline">
