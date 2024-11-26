@@ -139,7 +139,7 @@ const Navbar = () => {
                             <Logo />
                         </a>
                     </div>
-                    <div className="flex justify-end items-center gap-x-1.5 sm:gap-x-2 w-full text-gray-700 ">
+                    <div className="flex justify-end items-center  sm:gap-x-2 w-full text-gray-700 ">
                         <div className="flex md:space-x-3 md:justify-center md:align-middle md:items-center">
                             {" "}
                             <div className="inline-block">
