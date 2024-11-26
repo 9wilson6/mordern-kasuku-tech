@@ -57,7 +57,7 @@ const Navbar = () => {
                         <a href="tel:+254757306102"> tel: +254 757 306 102</a>
                     </div>
                 </div>
-                <nav className="relative  mx-auto lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
+                <nav className="relative  mx-auto lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex md:gap-2 md:gap-x-5 justify-between items-center">
                     <div className="w-full flex items-center lg:hidden">
                         <button
                             onClick={() => toggleNavbar()}
