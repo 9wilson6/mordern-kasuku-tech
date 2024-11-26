@@ -52,9 +52,18 @@ const Navbar = () => {
                 <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
                     <div className="flex text-xs md:text-base items-center justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
                         <a href="mailto: contact@kasukutech.com">
-                            email: contact@kasukutech.com
+                            <span className="block md:inline-block">
+                                Email:
+                            </span>{" "}
+                            contact@kasukutech.com
                         </a>
-                        <a href="tel:+254757306102"> tel: +254 757 306 102</a>
+                        <a href="tel:+254757306102">
+                            {" "}
+                            <span className="block md:inline-block">
+                                Tel:{" "}
+                            </span>{" "}
+                            +254 757 306 102
+                        </a>
                     </div>
                 </div>
                 <nav className="relative  mx-auto lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
@@ -137,7 +146,10 @@ const Navbar = () => {
                                 <Link href={route("register")}>
                                     <Button className="group flex h-8  items-center justify-center rounded-md  font-light bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
                                         <span className="inline-block  text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
-                                            Hire Us <span className="hidden md:inline">Now</span>
+                                            Hire Us{" "}
+                                            <span className="hidden md:inline">
+                                                Now
+                                            </span>
                                         </span>
                                     </Button>{" "}
                                 </Link>
