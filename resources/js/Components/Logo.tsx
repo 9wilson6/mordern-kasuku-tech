@@ -3,7 +3,7 @@ import React from "react";
 const Logo = () => {
     return (
         <>
-            <a href="#" className="font-extrabold text-2xl md:text-3xl text-totblue">
+            <a href="#" className="font-extrabold text-xl md:text-3xl text-totblue">
                 <div className="flex flex-row">
                     <div>Kasuku </div>
                     <svg
