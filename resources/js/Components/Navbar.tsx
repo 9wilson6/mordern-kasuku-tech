@@ -50,7 +50,7 @@ const Navbar = () => {
             />
             <header className="relative left-0 top-10 w-full flex items-center h-20 bg-white border-b border-b-gray-200  z-40">
                 <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
-                    <div className="flex text-xs md:text-base items-center justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
+                    <div className="flex text-xs md:text-base items-center justify-center md:justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
                         <a href="mailto: contact@kasukutech.com">
                             <span className="block md:inline-block">
                                 Email:
@@ -131,10 +131,10 @@ const Navbar = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className="flex items-center flex-1">
+                    <div className="">
                         <a
                             href="#"
-                            className="flex items-center gap-x-0.5 text-gray-800 "
+                            className=""
                         >
                             <Logo />
                         </a>
