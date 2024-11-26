@@ -32,15 +32,15 @@ function Hero() {
 
     return (
         <div>
-            <BackgroundLines>
+            {/* <BackgroundLines> */}
                 <header>
                     {/* Hero Container */}
-                    <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-10">
+                    <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-24">
                         {/* Component */}
                         <div className="mx-auto mb-8 w-full max-w-7xl text-center md:mb-12 lg:mb-16">
                             {/* Hero Title */}
                             <h1 className="mb-4 text-3xl font-bold md:text-5xl tracking-widest">
-                                <span className="text-totred block leading-loose text-6xl">
+                                <span className="text-green-500 block leading-loose text-6xl">
                                     {" "}
                                     Go Online!{" "}
                                 </span>
@@ -98,7 +98,7 @@ function Hero() {
                         </div>
                     </div>
                 </header>
-            </BackgroundLines>
+            {/* </BackgroundLines> */}
         </div>
     );
 }

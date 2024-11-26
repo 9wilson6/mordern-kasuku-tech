@@ -53,7 +53,7 @@ const Logo = () => {
                             ></circle>{" "}
                         </g>
                     </svg>
-                    <div className="text-totred">Tech</div>
+                    <div className="text-green-500">Tech</div>
                 </div>
                 {/* 
                         <div className="absolute left-10 top-[3px] h-full w-full font-extrabold  text-3xl text-totblue">

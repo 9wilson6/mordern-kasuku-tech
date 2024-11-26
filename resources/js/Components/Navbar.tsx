@@ -1,372 +1,158 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "./Logo";
-import { Link } from "@inertiajs/react";
 import { Button } from "./ui/moving-border";
+import { Link } from "@inertiajs/react";
 
-function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [menuOne, setMenuOne] = useState(false);
-
+const navItems = [
+    {
+        id: 1,
+        isActive: true,
+        text: "Home",
+        link: "#",
+    },
+    {
+        id: 2,
+        isActive: false,
+        text: "Portfolio",
+        link: "#",
+    },
+    {
+        id: 3,
+        isActive: false,
+        text: "Blog",
+        link: "#",
+    },
+    {
+        id: 4,
+        isActive: false,
+        text: "About",
+        link: "#",
+    },
+];
+const Navbar = () => {
+    const [openNavbar, setOpenNavbar] = useState(false);
+    const toggleNavbar = () => {
+        setOpenNavbar((openNavbar) => !openNavbar);
+    };
+    const closeNavbar = () => {
+        setOpenNavbar(false);
+    };
     return (
-        <section>
-            <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
-                <div className="flex items-center justify-start py-2 max-w-5xl mx-auto px-6 space-x-6">
-                    <a href="mailto: contact@kasukutech.com">
-                        email: contact@kasukutech.com
-                    </a>
-                    <a href="tel:+254757306102"> tel: +254 757 306 102</a>
+        <>
+            <div
+                onClick={() => {
+                    closeNavbar();
+                }}
+                aria-hidden="true"
+                className={`fixed bg-gray-800/40 inset-0 z-30 ${
+                    openNavbar ? "flex lg:hidden" : "hidden"
+                }`}
+            />
+            <header className="sticky left-0 top-10 w-full flex items-center h-20 bg-white border-b border-b-gray-200  z-40">
+                <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
+                    <div className="flex items-center justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
+                        <a href="mailto: contact@kasukutech.com">
+                            email: contact@kasukutech.com
+                        </a>
+                        <a href="tel:+254757306102"> tel: +254 757 306 102</a>
+                    </div>
                 </div>
-            </div>
-            <nav className="container z-10 mt-6 sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full lg:relative lg:top-0">
-                <div className="flex flex-col  px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
-                    <Logo />
-                    <div
-                        className={`mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0 ${
-                            isOpen ? "" : "hidden"
-                        }`}
-                    >
-                        {/* <div className="relative flex flex-col">
-                            <button
-                                onClick={() => setMenuOne(!menuOne)}
-                                className={`flex flex-row rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800 ${
-                                    menuOne
-                                        ? "text-gray-800 lg:border lg:border-gray-600 lg:bg-gray-50"
-                                        : "text-black lg:border lg:border-white"
-                                }`}
-                            >
-                                Component
-                                <svg
-                                    className={`w-6 h-6 fill-current transition-transform duration-300 ${
-                                        menuOne ? "rotate-180" : "rotate-0"
-                                    }`}
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
-                                </svg>
-                            </button>
-                            {menuOne && (
-                                <div className="z-50 flex w-full flex-col rounded-lg px-5 py-5 lg:absolute lg:top-20 lg:left-[-50%] lg:w-[800px] bg-gray-100 lg:flex-row lg:flex-wrap lg:py-7 xl:w-[950px]">
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Analytics
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Get a better understanding of where
-                                            your traffic is coming from
-                                        </p>
-                                    </a>
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Engagement
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Speak directly to your customers in
-                                            a more meaningful way
-                                        </p>
-                                    </a>
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Automations
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Build strategic funnels that will
-                                            drive your customers to convert
-                                        </p>
-                                    </a>
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Security
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Your customers data will be safe and
-                                            secure
-                                        </p>
-                                    </a>
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5  lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Integrations
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Connect with third-party tools that
-                                            you’re already using
-                                        </p>
-                                    </a>
-                                    ITEM
-                                    <a
-                                        className="flex grow flex-col rounded-lg px-5 py-5 lg:basis-60 xl:px-8"
-                                        href="#"
-                                    >
-                                        ICON
-                                        <div className="relative">
-                                            <svg
-                                                width="40"
-                                                height="40"
-                                                viewBox="0 0 40 40"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect
-                                                    width="40"
-                                                    height="40"
-                                                    fill="#C4C4C4"
-                                                />
-                                                <path
-                                                    d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
-                                                    fill="black"
-                                                />
-                                                <path
-                                                    d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
-                                                    fill="black"
-                                                />
-                                            </svg>
-                                        </div>
-                                        TEXT
-                                        <h2 className="font-inter mb-1 mt-5 text-lg font-medium text-black">
-                                            Reports
-                                        </h2>
-                                        <p className="font-inter max-w-64 text-sm text-gray-500 lg:max-w-sm">
-                                            Get detailed report that will help
-                                            you make more informed decisions
-                                        </p>
-                                    </a>
-                                </div>
-                            )}
-                        </div> */}
-                        {
-                            <>
-                                {" "}
-                                {/* <a
-                                    href="#"
-                                    className="font-inter rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                                >
-                                    Templates
-                                </a> */}
-                                <a
-                                    href="#"
-                                    className="font-inter z-10 rounded-lg lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                                >
-                                    Blog
-                                </a>
-                                {/* <a
-                                    href="#"
-                                    className="font-inter lg: rounded-lg pb-8 lg:px-6 lg:py-4 lg: lg:hover:text-gray-800"
-                                >
-                                    FAQs
-                                </a> */}
-                            </>
-                        }
-                    </div>
-                    <div
-                        className={`flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0 ${
-                            isOpen ? "" : "hidden"
-                        }`}
-                    >
-                        {
-                            <div className="flex space-x-3 justify-center align-middle items-center">
-                                {" "}
-                                <div className="inline-block">
-                                    <Link href={route("register")}>
-                                        <Button className="group flex h-10  items-center justify-center rounded-md  font-bold bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
-                                            <span className="block group-active:[transform:translate3d(0,1px,0)]">
-                                                Hire Us Now
-                                            </span>
-                                        </Button>{" "}
-                                    </Link>
-                                </div>
-                                <Link href={route("login")}>
-                                    <button className="cursor-pointer  z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
-                                        Login
-                                    </button>
-                                </Link>{" "}
-                                <div></div>
-                            </div>
-                        }
-                    </div>
-                    <button
-                        className="absolute right-5 lg:hidden"
-                        onClick={() => {
-                            setIsOpen(!isOpen);
-                        }}
-                    >
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                <nav className="relative  mx-auto lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
+                    <div className="w-full flex items-center lg:hidden">
+                        <button
+                            onClick={() => toggleNavbar()}
+                            aria-label="toggle navbar"
+                            className="outline-none border-r border-r-gray-200 pr-3 relative py-3 flex flex-col justify-center items-center gap-1"
                         >
-                            <path
-                                d="M3.75 12H20.25"
-                                stroke="#160042"
-                                strokeWidth="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></path>
-                            <path
-                                d="M3.75 6H20.25"
-                                stroke="#160042"
-                                strokeWidth="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></path>
-                            <path
-                                d="M3.75 18H20.25"
-                                stroke="#160042"
-                                strokeWidth="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></path>
-                        </svg>
-                    </button>
-                </div>
-            </nav>
-        </section>
-    );
-}
+                            {/* Top line */}
+                            <span
+                                aria-hidden="true"
+                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                    openNavbar ? "rotate-45 translate-y-2" : ""
+                                }`}
+                            />
+                            {/* Middle line */}
+                            <span
+                                aria-hidden="true"
+                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                    openNavbar ? "opacity-0" : "opacity-100"
+                                }`}
+                            />
+                            {/* Bottom line */}
+                            <span
+                                aria-hidden="true"
+                                className={`h-0.5 w-6 rounded bg-gray-800 transition-all duration-300 ${
+                                    openNavbar
+                                        ? "-rotate-45 -translate-y-2"
+                                        : ""
+                                }`}
+                            />
+                        </button>
+                    </div>
 
+                    <div
+                        className={`
+                    top-full absolute left-0 bg-white 
+                     lg:flex w-full ease-linear duration-300
+                    lg:relative lg:bg-transparent border-b border-b-gray-200  lg:border-b-0
+                    ${
+                        openNavbar
+                            ? ""
+                            : "invisible opacity-0 lg:visible lg:opacity-100"
+                    }
+                `}
+                    >
+                        <ul className=" px-5 sm:px-10 md:px-12 lg:px-0 flex flex-col lg:flex-row lg:items-center gap-y-6 lg:gap-x-5 text-gray-700  py-4 lg:py-0">
+                            {navItems.map((item) => (
+                                <li key={item.id}>
+                                    <a
+                                        href={item.link}
+                                        className={`
+                                        relative py-3 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg
+                                        ${
+                                            item.isActive
+                                                ? "after:bg-gray-600 after:w-4"
+                                                : ""
+                                        }
+                                    `}
+                                    >
+                                        {item.text}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="flex items-center flex-1">
+                        <a
+                            href="#"
+                            className="flex items-center gap-x-0.5 text-gray-800 "
+                        >
+                            <Logo />
+                        </a>
+                    </div>
+                    <div className="flex justify-end items-center gap-x-1.5 sm:gap-x-2 w-full text-gray-700 ">
+                        <div className="flex space-x-3 justify-center align-middle items-center">
+                            {" "}
+                            <div className="inline-block">
+                                <Link href={route("register")}>
+                                    <Button className="group flex h-8  items-center justify-center rounded-md  font-light bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
+                                        <span className="inline-block  text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
+                                            Hire Us <span className="hidden md:inline">Now</span>
+                                        </span>
+                                    </Button>{" "}
+                                </Link>
+                            </div>
+                            <Link href={route("login")}>
+                                <button className="cursor-pointer hidden md:inline-block  z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter  text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
+                                    Login
+                                </button>
+                            </Link>{" "}
+                            <div></div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </>
+    );
+};
 export default Navbar;
