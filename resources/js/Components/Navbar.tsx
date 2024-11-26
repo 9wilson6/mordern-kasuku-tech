@@ -50,14 +50,14 @@ const Navbar = () => {
             />
             <header className="relative left-0 top-10 w-full flex items-center h-20 bg-white border-b border-b-gray-200  z-40">
                 <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
-                    <div className="flex text-xs md:text-base items-center justify-end py-2 w-full md:max-w-5xl mx-auto px-3 md:px-6 space-x-1 md:space-x-6">
+                    <div className="flex text-xs md:text-base items-center justify-end py-2 max-w-5xl mx-auto px-6  space-x-4">
                         <a href="mailto: contact@kasukutech.com">
                             email: contact@kasukutech.com
                         </a>
                         <a href="tel:+254757306102"> tel: +254 757 306 102</a>
                     </div>
                 </div>
-                <nav className="relative  mx-auto  lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-3 md:gap-x-5 justify-between items-center">
+                <nav className="relative  mx-auto lg:max-w-5xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
                     <div className="w-full flex items-center lg:hidden">
                         <button
                             onClick={() => toggleNavbar()}
