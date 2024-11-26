@@ -50,7 +50,7 @@ const Navbar = () => {
             />
             <header className="relative left-0 top-10 w-full flex items-center h-20 bg-white border-b border-b-gray-200  z-40">
                 <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
-                    <div className="flex items-center justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
+                    <div className="flex text-xs md:text-base items-center justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
                         <a href="mailto: contact@kasukutech.com">
                             email: contact@kasukutech.com
                         </a>
