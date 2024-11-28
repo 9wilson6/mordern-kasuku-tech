@@ -5,28 +5,22 @@ import { Link, usePage } from "@inertiajs/react";
 
 const navItems = [
     {
-        id: 1,
-        isActive: true,
-        text: "Home",
-        link: "#",
-    },
-    {
         id: 2,
         isActive: false,
-        text: "Portfolio",
+        text: "Services",
         link: "#",
     },
     {
         id: 3,
         isActive: false,
         text: "Blog",
-        link: "#",
+        link: "/blog",
     },
     {
         id: 4,
         isActive: false,
-        text: "About",
-        link: "#",
+        text: "About Us",
+        link: "/about",
     },
 ];
 
@@ -39,20 +33,24 @@ const Navbar = () => {
         setOpenNavbar(false);
     };
 
-    const user = usePage().props.auth.user;  // Get the current logged-in user from Inertia.js
+    const user = usePage().props.auth.user; // Get the current logged-in user from Inertia.js
 
     return (
         <>
             <div
                 onClick={() => closeNavbar()}
                 aria-hidden="true"
-                className={`fixed bg-gray-800/40 inset-0 z-30 ${openNavbar ? "flex lg:hidden" : "hidden"}`}
+                className={`fixed bg-gray-800/40 inset-0 z-30 ${
+                    openNavbar ? "flex lg:hidden" : "hidden"
+                }`}
             />
             <header className="relative left-0 top-10 w-full flex items-center h-20 bg-white border-b border-b-gray-200 z-40">
                 <div className="fixed top-0 z-50 left-0 right-0 bg-totblue-light text-white">
                     <div className="flex text-xs md:text-base items-center justify-center md:justify-end py-2 max-w-5xl mx-auto px-6 space-x-6">
                         <a href="mailto: contact@kasukutech.com">
-                            <span className="block md:inline-block">Email:</span>{" "}
+                            <span className="block md:inline-block">
+                                Email:
+                            </span>{" "}
                             contact@kasukutech.com
                         </a>
                         <a href="tel:+254757306102">
@@ -86,7 +84,9 @@ const Navbar = () => {
                             <span
                                 aria-hidden="true"
                                 className={`h-0.5 w-6 rounded bg-green-500 transition-all duration-300 ${
-                                    openNavbar ? "-rotate-45 -translate-y-2" : ""
+                                    openNavbar
+                                        ? "-rotate-45 -translate-y-2"
+                                        : ""
                                 }`}
                             />
                         </button>
@@ -94,20 +94,24 @@ const Navbar = () => {
 
                     <div
                         className={`top-full absolute left-0 bg-white lg:flex w-full ease-linear duration-300 lg:relative lg:bg-transparent border-b border-b-gray-200 lg:border-b-0 ${
-                            openNavbar ? "" : "invisible opacity-0 lg:visible lg:opacity-100"
+                            openNavbar
+                                ? ""
+                                : "invisible opacity-0 lg:visible lg:opacity-100"
                         }`}
                     >
                         <ul className="px-5 sm:px-10 md:px-12 lg:px-0 flex flex-col lg:flex-row lg:items-center gap-y-6 lg:gap-x-5 text-gray-700 py-4 lg:py-0">
                             {navItems.map((item) => (
                                 <li key={item.id}>
-                                    <a
+                                    <Link
                                         href={item.link}
                                         className={`relative py-3 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-lg ${
-                                            item.isActive ? "after:bg-gray-600 after:w-4" : ""
+                                            item.isActive
+                                                ? "after:bg-gray-600 after:w-4"
+                                                : ""
                                         }`}
                                     >
                                         {item.text}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

@@ -1,9 +1,10 @@
+import { Link } from "@inertiajs/react";
 import React from "react";
 
 const Logo = () => {
     return (
         <>
-            <a href="#" className="font-extrabold text-2xl md:text-3xl text-totblue">
+            <Link href="/" className="font-extrabold text-2xl md:text-3xl text-totblue">
                 <div className="flex flex-row">
                     <div>Kasuku </div>
                     <svg
@@ -60,7 +61,7 @@ const Logo = () => {
                            
                             
                         </div> */}
-            </a>
+            </Link>
         </>
     );
 };

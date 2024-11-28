@@ -8,7 +8,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ title, description, imgSrc }) => {
     return (
-        <div className="group relative m-10 h-96 w-96 overflow-hidden rounded-lg shadow-md">
+        <div className="group relative m-10 mx-auto h-96 w-96 overflow-hidden rounded-lg shadow-md">
             {/* Page1 */}
             <div className="absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out group-hover:-top-96">
                 <img className="h-4/6 w-full object-cover" src={imgSrc} alt={title} />

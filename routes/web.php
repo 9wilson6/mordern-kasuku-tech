@@ -11,6 +11,13 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About');
+});
+Route::get('/blog', function () {
+    return Inertia::render('Blog/BlogPage');
+});
+
 Route::post('/contact', [MailController::class, 'contact'])->name('contact.send');
 
 Route::get('/dashboard', function () {
@@ -22,5 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__ . '/auth.php';
