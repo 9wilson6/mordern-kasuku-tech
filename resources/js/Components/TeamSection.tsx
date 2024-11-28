@@ -17,7 +17,7 @@ const teamData: TeamMember[] = [
     {
         name: "Wilson Muteru",
         role: "Lead Software Engineer",
-        image: "https://readymadeui.com/team-1.webp",
+        image: "assets/wilson.png",
         socialLinks: {
             facebook: "https://www.facebook.com/wilson.gatheru.1",
             twitter: "https://x.com/FinchTechs",
