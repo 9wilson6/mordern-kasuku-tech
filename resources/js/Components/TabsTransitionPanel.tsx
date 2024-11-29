@@ -8,7 +8,7 @@ export function TabsTransitionPanel() {
 
     const ITEMS = [
         {
-            title: "About Us",
+            title: "About ",
             subtitle: "About KasukuTech",
             content: (
                 <>
@@ -48,7 +48,7 @@ export function TabsTransitionPanel() {
         },
         {
             title: "Mission",
-            subtitle: "Narrative and Expression",
+            subtitle: "Our Mission",
             content: (
                 <>
                     <p className="mb-4">
@@ -86,7 +86,7 @@ export function TabsTransitionPanel() {
         },
         {
             title: "Vision",
-            subtitle: "Mastering Motion Tools",
+            subtitle: "Our Vision",
             content: (
                 <>
                     <p className="mb-4">
@@ -122,8 +122,8 @@ export function TabsTransitionPanel() {
             ),
         },
         {
-            title: "Core Values",
-            subtitle: "Mastering Motion Tools",
+            title: "Values",
+            subtitle: "Our Core Values",
             content: (
                 <>
                     <p className="mb-4">
@@ -161,15 +161,15 @@ export function TabsTransitionPanel() {
 
     return (
         <div>
-            <div className="mb-4 flex space-x-2">
+            <div className="mb-4 flex space-x-2 justify-end items-end">
                 {ITEMS.map((item, index) => (
                     <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
                         className={`rounded-md px-3 py-1 text-sm font-medium ${
                             activeIndex === index
-                                ? "bg-zinc-200 text-zinc-900 "
-                                : "bg-zinc-100 text-zinc-600  "
+                                ? "text-white bg-totblue "
+                                : "text-blue-100 bg-totblue-light  "
                         }`}
                     >
                         {item.title}

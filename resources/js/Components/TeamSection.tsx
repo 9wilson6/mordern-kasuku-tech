@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"; // Import icons
+import { BorderTrail } from "./ui/border-trail";
 
 // Define a type for team members
 interface TeamMember {
@@ -78,12 +79,14 @@ const TeamSection: React.FC = () => {
                 </h2>
 
                 {/* Team grid */}
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 text-center">
+                <div className=" grid md:grid-cols-3 sm:grid-cols-2 gap-8 text-center">
+                    
                     {teamData.map((member, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-lg p-6 shadow-md hover:scale-105 transition-all duration-500"
+                            className="relative bg-white rounded-lg p-6 shadow-md hover:scale-105 transition-all duration-500"
                         >
+                            <BorderTrail size={120} className="bg-gradient-to-l from-blue-500 via-green-500 to-red-500"></BorderTrail>
                             <div className="lg:min-h-[250px]">
                                 <img
                                     src={member.image}
@@ -92,25 +95,25 @@ const TeamSection: React.FC = () => {
                                 />
                             </div>
                             <div className="mt-6">
-                                <h4 className="text-gray-800 text-lg font-bold">
+                                <h4 className="text-green-500 text-lg font-bold">
                                     {member.name}
                                 </h4>
-                                <p className="text-sm text-gray-600 mt-1">
+                                <p className="text-sm text-totblue mt-1">
                                     {member.role}
                                 </p>
                                 <div className="space-x-4 mt-6">
                                     <IconButton
-                                        icon={FaFacebook} // Pass the actual icon component
+                                        icon={FaFacebook}
                                         link={member.socialLinks.facebook}
                                         label="Facebook"
                                     />
                                     <IconButton
-                                        icon={FaTwitter} // Pass the actual icon component
+                                        icon={FaTwitter}
                                         link={member.socialLinks.twitter}
                                         label="Twitter"
                                     />
                                     <IconButton
-                                        icon={FaLinkedin} // Pass the actual icon component
+                                        icon={FaLinkedin}
                                         link={member.socialLinks.linkedin}
                                         label="LinkedIn"
                                     />

@@ -13,29 +13,38 @@ function About() {
     return (
         <section>
             <Navbar />
+
             {/* Container */}
             <div className="mx-auto w-full max-w-6xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
+                <h2 className="mb-8 text-3xl font-bold md:text-5xl">
+                    About us
+                </h2>
                 {/* Component */}
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
                     {/* Content */}
-                    <div className="flex flex-col gap-8 lg:w-3/5">
+                    <div className="flex flex-col gap-8 lg:w-5/5">
                         <TabsTransitionPanel />
                         {/* Divider */}{" "}
-                        <div className="my-8 h-px w-full bg-black"></div>
+                        <div className="my-4 h-px w-full bg-black"></div>
+                        <div className="flex justify-center">
+                            <h2 className="mb-14 text-3xl font-bold md:text-5xl">
+                                What our clients are saying
+                            </h2>
+                        </div>
                         {/* Testimonials */}
                         {/* <Testimonials /> */}
                         <CardStackDemo />
                     </div>
 
                     {/* Image */}
-                    <div className="w-full rounded-md bg-gray-100  lg:w-2/5">
+                    {/* <div className="w-full rounded-md bg-gray-100  lg:w-2/5">
                         <ContactForm />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
             <TeamSection />
-            <MetricsSection/>
+            <MetricsSection />
             <Footer />
         </section>
     );

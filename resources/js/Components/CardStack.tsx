@@ -3,7 +3,8 @@ import { CardStack } from "./ui/card-stack";
 import { cn } from "@/lib/utils";
 export function CardStackDemo() {
     return (
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full  ">
+          
             <CardStack items={CARDS} />
         </div>
     );
@@ -20,7 +21,7 @@ export const Highlight = ({
     return (
         <span
             className={cn(
-                "font-bold bg-green-100 text-green-500   px-1 py-0.5",
+                "font-bold bg-green-200 text-green-500   px-1 py-0.5",
                 className
             )}
         >
@@ -29,7 +30,7 @@ export const Highlight = ({
     );
 };
 
-const CARDS = [
+const CARD = [
     {
         id: 0,
         name: "Manu Arora",
@@ -68,5 +69,87 @@ const CARDS = [
                 fight club.
             </p>
         ),
+    },
+];
+
+const CARDS = [
+    {
+        id: 0,
+        content: (
+            <p>
+                KasukuTech has been instrumental in transforming our{" "}
+                <Highlight>digital presence</Highlight>. Their expertise in
+                building helped us launch our platform ahead of schedule,
+                significantly improving our{" "}
+                <Highlight>
+                    user engagement and operational efficiency
+                </Highlight>
+                .
+            </p>
+        ),
+        name: "Sarah Johnson",
+        designation: "CEO, EcoTech Innovations",
+    },
+    {
+        id: 1,
+        content: (
+            <p>
+                KasukuTech's development of PerfectGrader has revolutionized our
+                approach to academic support. Their{" "}
+                <Highlight>team's commitment</Highlight> to quality and timely
+                delivery has not only improved our clients' satisfaction but
+                also enhanced our reputation in the educational services sector.
+                The <Highlight>scalable and user-friendly</Highlight> platform
+                they built for us has been a game-changer.
+            </p>
+        ),
+        name: "Samuel K Gachuki",
+        designation: "CEO, PerfectGrader",
+    },
+    {
+        id: 2,
+        content: (
+            <p>
+                African Real Estate's <Highlight>innovative platform</Highlight>
+                , developed by KasukuTech, has been a game-changer in the
+                property market. Their development of our{" "}
+                <Highlight>extensive catalogue </Highlight> and early access
+                listings feature has given our clients a significant advantage,
+                setting new standards in the real estate industry.
+            </p>
+        ),
+        name: "Mungai Kihara",
+        designation: "CEO, African Real Estate",
+    },
+    {
+        id: 3,
+        content: (
+            <p>
+                Working with KasukuTech has been a transformative experience for
+                Credible Research. Their team's{" "}
+                <Highlight> technical prowess</Highlight> and
+                <Highlight> innovative solutions</Highlight> have not only
+                streamlined our operations but also opened new avenues for
+                growth. They truly understand the unique challenges of the
+                academic research market.
+            </p>
+        ),
+        name: "Gerald Magu",
+        designation: "CEO, Credible Research",
+    },
+    {
+        id: 4,
+        content: (
+            <p>
+                KasukuTech's expertise in web development has significantly
+                enhanced our <Highlight>online presence</Highlight>. Their
+                ability to translate our vision into a{" "}
+                <Highlight>user-friendly</Highlight>, efficient platform has
+                been crucial in expanding our reach and improving client
+                engagement.
+            </p>
+        ),
+        name: "Dr. James M.",
+        designation: "Director, TechInnovate Solutions",
     },
 ];
