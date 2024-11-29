@@ -40,7 +40,7 @@ export const CardStack = ({
     };
 
     return (
-        <div className="relative  w-full h-80 md:h-60 md:w-[540px]  lg:w-[70%]">
+        <div className="relative  text-sm md:text-base w-full h-80 md:h-60 md:w-[540px]  lg:w-[70%]">
            
             {cards.map((card, index) => {
                 return (
