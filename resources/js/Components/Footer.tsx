@@ -1,4 +1,5 @@
 import React from "react";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 const Footer: React.FC = () => {
     return (
@@ -190,9 +191,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
             </div>
-
             <hr className="border-gray-600" />
-
             <div className="my-8 px-12 flex flex-wrap sm:justify-between gap-6 relative z-20">
                 <div className="flex space-x-5">
                     <a
@@ -221,11 +220,21 @@ const Footer: React.FC = () => {
                     © kesukuTech. All rights reserved.
                 </p>
             </div>
-
             <img
                 src="https://readymadeui.com/bg-image.webp"
                 className="absolute w-full inset-0 object-cover opacity-5 -z-0"
                 alt="Footer background"
+            />
+            <FloatingWhatsApp
+                phoneNumber="+254757306102"
+                accountName="KasukuTech Support"
+                avatar="assets/whatsapp-logo.png"
+                chatMessage="Hi there! How can we assist you today?"
+                placeholder="Type your message here..."
+                statusMessage="Typically replies within an hour"
+                notificationSound={true}
+                allowClickAway={true}
+                darkMode={false}
             />
         </footer>
     );
