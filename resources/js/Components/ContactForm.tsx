@@ -36,7 +36,7 @@ function ContactForm() {
         }
     };
     return (
-        <div className="mx-auto max-w-xl bg-gray-100 p-8 text-center">
+        <div className="mx-auto max-w-xl bg-white border rounded-lg border-blue-50 border-b-8 border-b-blue-100 p-8 text-center">
             <h3 className="text-2xl font-bold md:text-3xl">Get a free quote</h3>
             <p className="mx-auto mb-6 mt-4 max-w-lg text-sm text-gray-500 lg:mb-8">
                 Get a free quote today! Our expert team is ready to help you
@@ -53,7 +53,7 @@ function ContactForm() {
                 className="mx-auto mb-4 max-w-sm text-left"
             >
                 <div className="mb-2">
-                    <label htmlFor="name" className="mb-1 font-medium">
+                    <label htmlFor="name" className="mb-1 text-sm font-light">
                         Your Name
                     </label>
                     <input
@@ -61,14 +61,14 @@ function ContactForm() {
                         id="name"
                         value={data.name}
                         onChange={(e) => setData("name", e.target.value)}
-                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
+                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-3 pl-4 text-sm text-black" 
                     />
                     {errors.name && (
                         <p className="text-red-500 text-sm">{errors.name}</p>
                     )}
                 </div>
                 <div className="mb-2">
-                    <label htmlFor="email" className="mb-1 font-medium">
+                    <label htmlFor="email" className="mb-1 text-sm font-light">
                         Email Address
                     </label>
                     <input
@@ -76,7 +76,7 @@ function ContactForm() {
                         id="email"
                         value={data.email}
                         onChange={(e) => setData("email", e.target.value)}
-                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
+                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-3 pl-4 text-sm text-black"
                     />
                     {errors.email && (
                         <p className="text-red-500 text-sm">{errors.email}</p>
@@ -84,7 +84,7 @@ function ContactForm() {
                 </div>
 
                 <div className="mb-2">
-                    <label htmlFor="subject" className="mb-1 font-medium">
+                    <label htmlFor="subject" className="mb-1 text-sm font-light">  
                         Project Title
                     </label>
                     <input
@@ -92,16 +92,14 @@ function ContactForm() {
                         id="subject"
                         value={data.subject}
                         onChange={(e) => setData("subject", e.target.value)}
-                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 pl-4 text-sm text-black"
+                        className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-3 pl-4 text-sm text-black"
                     />
                     {errors.name && (
                         <p className="text-red-500 text-sm">{errors.subject}</p>
                     )}
                 </div>
                 <div className="mb-5 md:mb-6 lg:mb-8">
-                    <label htmlFor="message" className="mb-1 font-medium">
-                        Project Brief
-                    </label>
+                    <label htmlFor="message" className="mb-1 text-sm font-light">Project Brief</label>
                     <textarea
                         id="message"
                         value={data.message}
@@ -115,7 +113,7 @@ function ContactForm() {
                 <button
                     type="submit"
                     disabled={processing}
-                    className="inline-block w-full cursor-pointer rounded-md bg-black px-6 py-3 text-center font-semibold text-white"
+                    className="inline-block w-full cursor-pointer rounded-md bg-totblue-light px-6 py-3 text-center font-semibold text-white"
                 >
                     {processing ? "Sending..." : "Get free quote"}
                 </button>

@@ -16,7 +16,7 @@ const CallToAction: React.FC<ContactSectionProps> = ({
 }) => {
     return (
         <section className="mx-auto relative h-full">
-            <div className="py-10 inset-0 -z-10 h-full w-full bg-totwhite bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+            <div className="py-10 inset-0 -z-10 h-full w-full bg-totwhite bg-[radial-gradient(#e5e7eb_1px,transparent_1.5px)] [background-size:16px_16px]">
                 <div className= "  container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full flex flex-col items-center justify-cente lg:flex-row">
                     <div className="text-center flex flex-col justify-center space-y-10 items-center tracking-widest">
                         <h2 className="bg-gradient-to-r from-pink-500  to-indigo-500 bg-clip-text text-transparent text-3xl font-extrabold md:text-5xl">

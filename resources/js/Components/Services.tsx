@@ -22,7 +22,6 @@ const Services: React.FC<ServicesProps> = ({
         <section className="bg-white py-10">
             <div className="relative">
                 <div className="container mx-auto sm:px-10 md:px-12 lg:px-5 px-5 w-full bg-white">
-                    <div className=" absolute bottom-auto left-[50%] top-[50%] h-[500px] w-full -translate-x-[50%] translate-y-[-40%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
                     <div className="mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
@@ -33,7 +32,7 @@ const Services: React.FC<ServicesProps> = ({
                             </p>
                         </div>
 
-                        <div className="sm:col-gap-12 row-gap-12 md:gap mt-10 grid grid-cols-1 sm:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:mt-24">
+                        <div className="sm:col-gap-12 row-gap-12 md:gap mt-10 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 ">
                             {services.map((service, index) => (
                                 <div
                                     key={index}
@@ -54,7 +53,7 @@ const Services: React.FC<ServicesProps> = ({
                     </div>
                 </div>
             </div>
-            <div className="sm:col-gap-12 row-gap-12 md:gap mt-10  xl:mt-24">
+            <div className="sm:col-gap-12 row-gap-12 md:gap mt-10  ">
                 <section className="relative bg-blue-50 py-10 text-blue-900 sm:py-16 lg:py-24">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">

@@ -34,7 +34,7 @@ function Hero() {
             {/* <BackgroundLines> */}
             <header>
                 {/* Hero Container */}
-                <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-16 md:py-24">
+                <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-16 md:py-20">
                     {/* Component */}
                     <div className="mx-auto mb-8 w-full max-w-7xl text-center md:mb-12 lg:mb-16">
                         {/* Hero Title */}
