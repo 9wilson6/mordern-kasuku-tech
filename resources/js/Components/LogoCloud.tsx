@@ -42,7 +42,7 @@ const LogoCloud = () => {
                 <div className="bg-gray-50 py-16">
                     <InfiniteSlider gap={24} reverse>
                         {sliderItems.map((item, index) => (
-                            <a href={item.href} key={index}>
+                            <a href={item.href} key={index} target="_blank">
                                 <img
                                     src={item.src}
                                     alt={item.alt}
