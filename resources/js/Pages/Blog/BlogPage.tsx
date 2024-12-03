@@ -1,5 +1,7 @@
 import React from "react";
 import BlogCard from "./BlogCard"; // Import the new BlogCard component
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 const BlogPage: React.FC = () => {
     const blogs = [
@@ -34,6 +36,7 @@ const BlogPage: React.FC = () => {
 
     return (
         <section className="text-gray-600 body-font bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_0.1px,transparent_1px)] bg-[size:14px_24px]">
+            <Navbar />
             <div className="container px-5 py-24 mx-auto">
                 {/* Title and description section */}
                 <div className="flex flex-col text-center w-full mb-20">
@@ -42,11 +45,11 @@ const BlogPage: React.FC = () => {
                     </h2>
                     <hr className="my-8 h-0.3 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-green">
-                        Delve into the forefront of academic research with our
-                        latest publications. Explore breakthrough studies,
-                        comprehensive analyses, and expert insights across
-                        various disciplines, designed to advance knowledge and
-                        spark intellectual curiosity.
+                        At KasukuTech, we’re passionate about empowering
+                        businesses through software innovation. Explore our blog
+                        for practical advice, success stories, and cutting-edge
+                        trends in creating impactful software solutions for
+                        businesses of all sizes.
                     </p>
                 </div>
 
@@ -88,6 +91,7 @@ const BlogPage: React.FC = () => {
                     </a>
                 </div>
             </div>
+            <Footer />
         </section>
     );
 };
