@@ -4,18 +4,18 @@ import { Button } from "./ui/moving-border";
 import { Link, usePage } from "@inertiajs/react";
 
 const navItems = [
-    {
-        id: 2,
-        isActive: false,
-        text: "Services",
-        link: "#",
-    },
-    {
-        id: 3,
-        isActive: false,
-        text: "Blog",
-        link: "/blog",
-    },
+    // {
+    //     id: 2,
+    //     isActive: false,
+    //     text: "Services",
+    //     link: "#",
+    // },
+    // {
+    //     id: 3,
+    //     isActive: false,
+    //     text: "Blog",
+    //     link: "/blog",
+    // },
     {
         id: 4,
         isActive: false,
@@ -136,9 +136,15 @@ const Navbar = () => {
                             ) : (
                                 <>
                                     {/* Show "Login" and "Register" if no user is logged in */}
+
+                                    <Link href={route("login")}>
+                                        <button className="cursor-pointer hidden md:inline-block z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
+                                            Login
+                                        </button>
+                                    </Link>
                                     <div className="inline-block">
                                         <Link href={route("register")}>
-                                            <Button className="group flex h-8 items-center justify-center rounded-md font-light bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 px-2 md:px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#fdba74] active:[box-shadow:none]">
+                                            <Button className="group flex h-8 items-center justify-center rounded-md font-light bg-green-500 px-2 md:px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#22c55e] active:[box-shadow:none]">
                                                 <span className="inline-block text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
                                                     Hire Us{" "}
                                                     <span className="hidden md:inline">
@@ -148,11 +154,6 @@ const Navbar = () => {
                                             </Button>
                                         </Link>
                                     </div>
-                                    <Link href={route("login")}>
-                                        <button className="cursor-pointer hidden md:inline-block z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
-                                            Login
-                                        </button>
-                                    </Link>
                                 </>
                             )}
                         </div>
