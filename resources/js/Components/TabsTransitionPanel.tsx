@@ -13,35 +13,58 @@ export function TabsTransitionPanel() {
             content: (
                 <>
                     <p className="mb-4">
-                        Explore the principles of motion aesthetics that enhance
-                        the visual appeal of interfaces. Learn to balance
-                        timing, easing, and the flow of motion to create
-                        seamless user experiences.
+                        Welcome to Kasuku Tech, where technology meets
+                        innovation to empower businesses and individuals to
+                        thrive in the digital age.
                     </p>
                     <p className="mb-4">
-                        In this course, we will explore how animations can add
-                        depth and interactivity, guiding users through an
-                        intuitive and dynamic interface. The application of
-                        these principles in real-world projects will make a
-                        significant impact on your designs.
+                        We specialize in providing comprehensive technology
+                        solutions tailored to meet your unique needs. From
+                        website design and development to mobile app creation,
+                        cybersecurity, SEO, data analysis & insights, and social
+                        media business page creation, we are your trusted
+                        partner in achieving digital success.
                     </p>
                     <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        With over 5 years of expertise, our team of
+                        professionals is dedicated to delivering top-notch
+                        services that drive growth, enhance visibility, and
+                        secure your digital assets.
+                    </p>
+                </>
+            ),
+        },
+        {
+            title: "Story ",
+            subtitle: "Our story at KasukuTech",
+            content: (
+                <>
+                    <p className="mb-4">
+                        Over time, we’ve observed that both the Kenyan and
+                        global online markets have lagged behind in online
+                        presence. Many businesses with a strong physical
+                        presence remain unaware of the transformative power of
+                        digital platforms. Others recognize the value of going
+                        online but lack the knowledge or resources to build a
+                        professional website or mobile app to showcase their
+                        offerings.
                     </p>
                     <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        There’s also a common misconception that web and mobile
+                        app development are prohibitively expensive. At Kasuku
+                        Tech, we’ve taken it upon ourselves to demystify these
+                        notions and make it simple, accessible, and affordable
+                        for businesses to establish their online presence.
                     </p>
                     <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        Our mission is to eliminate the hurdles and confusion
+                        surrounding web and app development, ensuring the
+                        process is seamless from start to finish. Whether it’s
+                        creating a stunning website, developing an intuitive
+                        mobile app, or enhancing your digital strategy, we are
+                        the solution to your online challenges. At Kasuku Tech,
+                        we measure our success by the success of your online
+                        business.
                     </p>
                 </>
             ),
@@ -52,34 +75,9 @@ export function TabsTransitionPanel() {
             content: (
                 <>
                     <p className="mb-4">
-                        Delve into how motion can be used as an artistic tool to
-                        tell stories and evoke emotions, making digital
-                        interactions feel more human and expressive.
-                    </p>
-                    <p className="mb-4">
-                        Learn how motion design can transform user interactions
-                        into memorable experiences. By exploring the emotional
-                        connection between animation and storytelling, we’ll
-                        uncover how each frame has the power to communicate a
-                        deeper meaning.
-                    </p>
-                    <p className="mb-4">
-                        Whether subtle or dramatic, the language of motion can
-                        transcend functional design and become a tool for
-                        emotional expression, creating immersive experiences for
-                        users.
-                    </p>
-                    <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
-                    </p>
-                    <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        To empower businesses and individuals with innovative
+                        technology solutions that enhance growth, visibility,
+                        and security in the digital world.
                     </p>
                 </>
             ),
@@ -90,33 +88,9 @@ export function TabsTransitionPanel() {
             content: (
                 <>
                     <p className="mb-4">
-                        Gain proficiency in advanced techniques such as
-                        physics-based animations, 3D transformations, and
-                        complex sequencing to elevate your design skills and
-                        implementation.
-                    </p>
-                    <p className="mb-4">
-                        Learn to harness the power of motion design tools to
-                        create seamless, captivating animations that serve both
-                        aesthetic and functional purposes in modern interfaces.
-                    </p>
-                    <p className="mb-4">
-                        Advanced tools like timeline-based animations and motion
-                        paths will help you create fluid, natural transitions
-                        that enhance the overall experience, making your designs
-                        more engaging and interactive.
-                    </p>
-                    <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
-                    </p>
-                    <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        To be the leading provider of technology solutions,
+                        enabling businesses to reach their full potential in an
+                        ever-evolving digital landscape.
                     </p>
                 </>
             ),
@@ -127,32 +101,24 @@ export function TabsTransitionPanel() {
             content: (
                 <>
                     <p className="mb-4">
-                        Gain proficiency in advanced techniques such as
-                        physics-based animations, 3D transformations, and
-                        complex sequencing to elevate your design skills and
-                        implementation.
+                        Innovation: Embracing creativity and innovation to
+                        deliver exceptional solutions.
                     </p>
                     <p className="mb-4">
-                        Our focus will be on improving the technical execution
-                        of motion graphics, pushing the boundaries of what’s
-                        possible with the right tools and techniques.
+                        Integrity: Upholding honesty and transparency in every
+                        interaction.
                     </p>
                     <p className="mb-4">
-                        We will explore the intersection of creativity and
-                        technology, teaching you how to apply the latest motion
-                        design principles in practical, real-world scenarios.
+                        Excellence: Striving for excellence in every project we
+                        undertake.
                     </p>
                     <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        Collaboration: Fostering strong partnerships and
+                        teamwork with our clients.
                     </p>
                     <p className="mb-4">
-                        Motion not only attracts attention but also helps users
-                        navigate through content, improving usability and user
-                        engagement. It can convey emotions, inform actions, and
-                        provide feedback all through simple visual cues.
+                        Customer Satisfaction: Your success is our
+                        greatest achievement.
                     </p>
                 </>
             ),
@@ -161,15 +127,15 @@ export function TabsTransitionPanel() {
 
     return (
         <div>
-            <div className="mb-4 flex space-x-2 justify-end items-end">
+            <div className="mb-4 flex space-x-2 justify-start items-end">
                 {ITEMS.map((item, index) => (
                     <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
                         className={`rounded-md px-3 py-1 text-sm font-medium ${
                             activeIndex === index
-                                ? "text-white bg-totblue "
-                                : "text-blue-100 bg-totblue-light  "
+                                ? "text-white bg-green-700 "
+                                : "text-yellow-200 bg-green-500  "
                         }`}
                     >
                         {item.title}

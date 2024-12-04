@@ -22,7 +22,7 @@ function About() {
                 {/* Component */}
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
                     {/* Content */}
-                    <div className="flex flex-col gap-8 lg:w-5/5">
+                    <div className="flex flex-col gap-8 lg:w-5/5 w-full">
                         <TabsTransitionPanel />
                         {/* Divider */}{" "}
                         <div className="my-4 h-px w-full bg-black"></div>
