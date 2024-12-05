@@ -143,7 +143,7 @@ const Navbar = () => {
                                         </button>
                                     </Link> */}
                                     <div className="inline-block">
-                                        <a href="#contact">
+                                        <a href="/#contact">
                                             <Button className="group flex h-8 items-center justify-center rounded-md font-light bg-green-500 px-2 md:px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#22c55e] active:[box-shadow:none]">
                                                 <span className="inline-block text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
                                                     Hire Us{" "}
