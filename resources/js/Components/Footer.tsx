@@ -235,7 +235,7 @@ const Footer: React.FC = () => {
                 avatar="assets/whatsapp-logo.png"
                 chatMessage="Hi there! How can we assist you today?"
                 placeholder="Type your message here..."
-                statusMessage="Typically replies within an hour"
+                statusMessage="Typically replies within minutes"
                 notificationSound={true}
                 allowClickAway={true}
                 darkMode={false}
