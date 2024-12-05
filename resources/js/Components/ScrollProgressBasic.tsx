@@ -14,7 +14,7 @@ export function ScrollProgressBasic({
 
     return (
         <div
-            className="h-[350px] overflow-auto px-8 pb-4 pt-6"
+            className="h-[350px] overflow-auto px-8 "
             ref={containerRef}
         >
             <div className="absolute left-0 top-0 z-10 h-1 w-full bg-green-500">

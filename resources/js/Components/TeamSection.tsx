@@ -16,31 +16,32 @@ interface TeamMember {
 
 const teamData: TeamMember[] = [
     {
-        name: "Wilson Muteru",
-        role: "Lead Software Engineer",
-        image: "assets/wilson.png",
+        name: "Gerald Magu",
+        role: " Lead Data Engineer",
+        image: "assets/gerald.jpg",
         socialLinks: {
-            facebook: "https://www.facebook.com/wilson.gatheru.1",
-            twitter: "https://x.com/FinchTechs",
-            linkedin: "https://www.linkedin.com/in/wilson-gm-034495120/",
-        },
-    },
-    {
-        name: "Mark Adair",
-        role: "Software Engineer",
-        image: "https://readymadeui.com/team-2.webp",
-        socialLinks: {
-            facebook: "https://facebook.com/markadair",
+            facebook: "https://www.facebook.com/kasukutech",
             twitter: "https://twitter.com/markadair",
             linkedin: "https://linkedin.com/in/markadair",
         },
     },
     {
+        name: "Wilson Muteru",
+        role: "Lead Software Engineer",
+        image: "assets/wilson.png",
+        socialLinks: {
+            facebook: "https://www.facebook.com/kasukutech",
+            twitter: "https://x.com/FinchTechs",
+            linkedin: "https://www.linkedin.com/in/wilson-gm-034495120/",
+        },
+    },
+
+    {
         name: "Simon Konecki",
         role: "Web Designer",
         image: "https://readymadeui.com/team-3.webp",
         socialLinks: {
-            facebook: "https://facebook.com/simonkonecki",
+            facebook: "https://www.facebook.com/kasukutech",
             twitter: "https://twitter.com/simonkonecki",
             linkedin: "https://linkedin.com/in/simonkonecki",
         },
@@ -80,13 +81,15 @@ const TeamSection: React.FC = () => {
 
                 {/* Team grid */}
                 <div className=" grid md:grid-cols-3 sm:grid-cols-2 gap-8 text-center">
-                    
                     {teamData.map((member, index) => (
                         <div
                             key={index}
                             className="relative bg-white rounded-lg p-6 shadow-md hover:scale-105 transition-all duration-500"
                         >
-                            <BorderTrail size={120} className="bg-gradient-to-l from-blue-500 via-green-500 to-red-500"></BorderTrail>
+                            <BorderTrail
+                                size={120}
+                                className="bg-gradient-to-l from-blue-500 via-green-500 to-red-500"
+                            ></BorderTrail>
                             <div className="lg:min-h-[250px]">
                                 <img
                                     src={member.image}

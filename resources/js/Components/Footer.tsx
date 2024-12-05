@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/react";
 import React from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
@@ -12,14 +13,14 @@ const Footer: React.FC = () => {
                     </h2>
                     <ul className="space-y-5">
                         <li>
-                            <a
-                                href="#"
+                            <Link
+                                href="/about"
                                 className="text-gray-300 hover:text-white text-base flex items-center transition-all"
                             >
                                 {/* Placeholder SVG */}
                                 <span className="inline mr-1.5 h-4 w-4 shrink-0 bg-gray-500"></span>
                                 About
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -160,7 +161,8 @@ const Footer: React.FC = () => {
                     <ul className="space-y-5">
                         <li>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/kasukutech"
+                                target="_blank"
                                 className="text-gray-300 hover:text-white text-base flex items-center transition-all"
                             >
                                 {/* Placeholder SVG */}
@@ -170,7 +172,8 @@ const Footer: React.FC = () => {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="https://x.com/kasukutech"
+                                target="_blank"
                                 className="text-gray-300 hover:text-white text-base flex items-center transition-all"
                             >
                                 {/* Placeholder SVG */}
@@ -180,12 +183,13 @@ const Footer: React.FC = () => {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="https://ke.linkedin.com/company/kasukutech?trk=public_post_follow-view-profile"
+                                target="_blank"
                                 className="text-gray-300 hover:text-white text-base flex items-center transition-all"
                             >
                                 {/* Placeholder SVG */}
                                 <span className="inline mr-1.5 h-4 w-4 shrink-0 bg-gray-500"></span>
-                                Instagram
+                                LinkedIn
                             </a>
                         </li>
                     </ul>

@@ -31,14 +31,10 @@ export function TabsTransitionPanel() {
                         services that drive growth, enhance visibility, and
                         secure your digital assets.
                     </p>
-                </>
-            ),
-        },
-        {
-            title: "Story ",
-            subtitle: "Our story at KasukuTech",
-            content: (
-                <>
+
+                    <h2 className="my-3 font-medium text-zinc-800 -ml-6">
+                        Our story
+                    </h2>
                     <p className="mb-4">
                         Over time, we’ve observed that both the Kenyan and
                         global online markets have lagged behind in online
@@ -69,6 +65,7 @@ export function TabsTransitionPanel() {
                 </>
             ),
         },
+
         {
             title: "Mission",
             subtitle: "Our Mission",
@@ -76,7 +73,7 @@ export function TabsTransitionPanel() {
                 <>
                     <p className="mb-4">
                         To empower businesses and individuals with innovative
-                        technology solutions that enhance growth, visibility,
+                        technology solutions that enhance <br /> growth, visibility,
                         and security in the digital world.
                     </p>
                 </>
@@ -89,7 +86,7 @@ export function TabsTransitionPanel() {
                 <>
                     <p className="mb-4">
                         To be the leading provider of technology solutions,
-                        enabling businesses to reach their full potential in an
+                        enabling businesses to reach <br /> their full potential in an
                         ever-evolving digital landscape.
                     </p>
                 </>
@@ -134,8 +131,8 @@ export function TabsTransitionPanel() {
                         onClick={() => setActiveIndex(index)}
                         className={`rounded-md px-3 py-1 text-sm font-medium ${
                             activeIndex === index
-                                ? "text-white bg-green-700 "
-                                : "text-yellow-200 bg-green-500  "
+                                ? "text-black bg-green-300 "
+                                : "text-white bg-green-500  "
                         }`}
                     >
                         {item.title}

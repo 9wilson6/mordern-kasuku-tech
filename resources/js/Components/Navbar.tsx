@@ -91,9 +91,15 @@ const Navbar = () => {
                             />
                         </button>
                     </div>
+                    <div className="">
+                        <a href="#">
+                            <Logo />
+                        </a>
+                    </div>
+                  
 
                     <div
-                        className={`top-full absolute left-0 bg-white lg:flex w-full ease-linear duration-300 lg:relative lg:bg-transparent border-b border-b-gray-200 lg:border-b-0 ${
+                        className={`top-full absolute left-0 bg-white lg:flex w-full justify-center ease-linear duration-300 lg:relative lg:bg-transparent border-b border-b-gray-200 lg:border-b-0 ${
                             openNavbar
                                 ? ""
                                 : "invisible opacity-0 lg:visible lg:opacity-100"
@@ -117,12 +123,6 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className="">
-                        <a href="#">
-                            <Logo />
-                        </a>
-                    </div>
-
                     <div className="flex justify-end items-center sm:gap-x-2 w-full text-gray-700">
                         {/* Conditional Rendering */}
                         <div className="flex md:space-x-3 md:justify-center md:align-middle md:items-center">
@@ -137,13 +137,13 @@ const Navbar = () => {
                                 <>
                                     {/* Show "Login" and "Register" if no user is logged in */}
 
-                                    <Link href={route("login")}>
+                                    {/* <Link href={route("login")}>
                                         <button className="cursor-pointer hidden md:inline-block z-50 rounded-[8px] bg-totblue-light px-3 py-1 lg:my-4 font-inter text-sm text-totwhite transition-colors hover:bg-neutral-100 hover:text-totblue active:bg-neutral-50">
                                             Login
                                         </button>
-                                    </Link>
+                                    </Link> */}
                                     <div className="inline-block">
-                                        <Link href={route("register")}>
+                                        <a href="#contact">
                                             <Button className="group flex h-8 items-center justify-center rounded-md font-light bg-green-500 px-2 md:px-4 text-neutral-50 shadow-[inset_0_1px_0px_0px_#22c55e] active:[box-shadow:none]">
                                                 <span className="inline-block text-xs md:text-sm group-active:[transform:translate3d(0,1px,0)]">
                                                     Hire Us{" "}
@@ -152,7 +152,7 @@ const Navbar = () => {
                                                     </span>
                                                 </span>
                                             </Button>
-                                        </Link>
+                                        </a>
                                     </div>
                                 </>
                             )}
