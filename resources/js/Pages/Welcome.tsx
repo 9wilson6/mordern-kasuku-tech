@@ -27,10 +27,22 @@ export default function Welcome({
 
     return (
         <div className="h-full w-full">
-            <Head title="Welcome to KasukuTech" />
+            <Head title="Welcome to KasukuTech">
+                <link rel="canonical" href="https://kasukutech.com/" />
+
+                <title>KasukuTech - Innovative Software Solutions</title>
+                <meta
+                    name="description"
+                    content="KasukuTech provides top-notch software solutions including mobile apps, scalable web applications, SEO, marketing, AI, ML, cybersecurity, cloud solutions, IT consulting, and more."
+                />
+                <meta
+                    name="keywords"
+                    content="mobile apps, web applications, SEO, digital marketing, branding, AI, machine learning, cybersecurity, cloud solutions, IT consulting, KasukuTech, software solutions"
+                />
+            </Head>
 
             <Navbar />
-            
+
             <Hero />
             <CallToAction
                 title="Let us bring your Vision to Reality"
@@ -47,8 +59,8 @@ export default function Welcome({
 
             <LogoCloud />
             <WhyUs />
-            <Contact/>
-            <Footer/>
+            <Contact />
+            <Footer />
         </div>
     );
 }

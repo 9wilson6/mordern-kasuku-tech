@@ -8,10 +8,25 @@ import { TransitionPanel } from "@/Components/TransitionPanel";
 import { TabsTransitionPanel } from "@/Components/TabsTransitionPanel";
 import React from "react";
 import MetricsSection from "@/Components/Metrics";
+import { Head } from "@inertiajs/react";
 
 function About() {
     return (
         <section>
+            <Head title="About Us - KasukuTech">
+                <link rel="canonical" href="https://kasukutech.com/about-us" />
+
+                <title>About Us - Driving Innovation at KasukuTech</title>
+                <meta
+                    name="description"
+                    content="Learn about KasukuTech, a tech startup dedicated to revolutionizing businesses with innovative software solutions including AI, cloud, cybersecurity, and more."
+                />
+                <meta
+                    name="keywords"
+                    content="about KasukuTech, tech startup, software solutions, business innovation, AI, cloud solutions, cybersecurity, IT consulting"
+                />
+            </Head>
+
             <Navbar />
 
             {/* Container */}

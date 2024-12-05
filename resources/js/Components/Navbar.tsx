@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Logo from "./Logo";
 import { Button } from "./ui/moving-border";
-import { Link, usePage } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 
 const navItems = [
     // {
@@ -37,6 +37,7 @@ const Navbar = () => {
 
     return (
         <>
+            
             <div
                 onClick={() => closeNavbar()}
                 aria-hidden="true"
@@ -96,7 +97,6 @@ const Navbar = () => {
                             <Logo />
                         </a>
                     </div>
-                  
 
                     <div
                         className={`top-full absolute left-0 bg-white lg:flex w-full justify-center ease-linear duration-300 lg:relative lg:bg-transparent border-b border-b-gray-200 lg:border-b-0 ${
