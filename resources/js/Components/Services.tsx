@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "./ui/moving-border";
+import { Link } from "@inertiajs/react";
 
 // Define the type for a single service
 interface Service {
@@ -11,12 +13,14 @@ interface ServicesProps {
     services: Service[];
     heading: string;
     subheading: string;
+    showMore: boolean;
 }
 
 const Services: React.FC<ServicesProps> = ({
     services,
     heading,
     subheading,
+    showMore,
 }) => {
     return (
         <section className="bg-white py-10">
@@ -24,12 +28,25 @@ const Services: React.FC<ServicesProps> = ({
                 <div className="container mx-auto sm:px-10 md:px-12 lg:px-5 px-5 w-full bg-white">
                     <div className="mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
-                                {heading}
-                            </h2>
-                            <p className="mt-4 text-base text-gray-700 sm:mt-8">
-                                {subheading}
-                            </p>
+                            {showMore ? (
+                                <>
+                                    <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
+                                        {heading}
+                                    </h2>
+                                    <p className="mt-4 text-base text-gray-700 sm:mt-8">
+                                        {subheading}
+                                    </p>
+                                </>
+                            ) : (
+                                <div className=" py-10 ">
+                                    <h2 className="text-3xl font-bold text-green-800 sm:text-4xl xl:text-5xl">
+                                        {heading}
+                                    </h2>
+                                    <p className="mt-4 text-base text-gray-700 sm:mt-8 w-full mx-auto max-w-4xl">
+                                        {subheading}
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <div className="sm:col-gap-12 row-gap-12 md:gap mt-10 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 ">
@@ -38,7 +55,13 @@ const Services: React.FC<ServicesProps> = ({
                                     key={index}
                                     className="md:border-b-2 border-sky-500 md:shadow-lg m-2 md:p-8 lg:p-12"
                                 >
-                                    <div className="mx-auto block align-middle text-5xl text-sky-400">
+                                    <div
+                                        className="mx-auto block align-middle text-5xl text-sky-400"
+                                        style={{
+                                            height: "64px",
+                                            width: "64px",
+                                        }}
+                                    >
                                         {service.icon}
                                     </div>
                                     <h3 className="mt-6 text-xl font-bold text-slate-800">
@@ -50,11 +73,43 @@ const Services: React.FC<ServicesProps> = ({
                                 </div>
                             ))}
                         </div>
+                        <div className="flex justify-center w-full mx-auto pt-10">
+                            {" "}
+                            {showMore && (
+                                <Link
+                                    href="/services"
+                                    className="group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-green-500 py-1 pl-6 pr-14 font-medium text-neutral-50"
+                                >
+                                    <span className="z-10 pr-2">
+                                        See All Services
+                                    </span>
+                                    <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-green-700 transition-[width] group-hover:w-[calc(100%-8px)]">
+                                        <div className="mr-3.5 flex items-center justify-center">
+                                            <svg
+                                                width="15"
+                                                height="15"
+                                                viewBox="0 0 15 15"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-5 w-5 text-neutral-50"
+                                            >
+                                                <path
+                                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                                    fill="currentColor"
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="sm:col-gap-12 row-gap-12 md:gap mt-10  ">
-                <section className="relative bg-blue-50 py-10 text-blue-900 sm:py-16 lg:py-24">
+                <section className="relative bg-blue-50 py-14 text-blue-900 ">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <div className="mb-4 inline-flex h-12 w-12 text-blue-700">

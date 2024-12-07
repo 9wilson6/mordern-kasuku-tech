@@ -8,6 +8,7 @@ import Services from "@/Components/Services";
 import WhyUs from "@/Components/WhyUs";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
+import { tr } from "framer-motion/client";
 
 export default function Welcome({
     auth,
@@ -55,6 +56,7 @@ export default function Welcome({
                 heading="Our Services"
                 subheading="We design digital experiences that matter."
                 services={servicesData}
+                showMore={true}
             />
 
             <LogoCloud />
@@ -97,36 +99,6 @@ const servicesData = [
 
         icon: <img src="assets/seo.svg" loading="lazy" alt="seo" />,
     },
-    {
-        title: "User Interface & User Experience",
-        description:
-            "We create intuitive and catchy web designs backed by cognitive user behaviour",
-        icon: (
-            <img
-                src="assets/uiux.svg"
-                loading="lazy"
-                alt="user interface & user experience"
-            />
-        ),
-    },
-    {
-        title: "Web Development",
-        description:
-            "We create custom web applications in a wide scope of frameworks and technologies that fit your needs.",
-        icon: (
-            <img
-                src="assets/code.svg"
-                loading="lazy"
-                alt="user interface & user experience"
-            />
-        ),
-    },
-    {
-        title: "Search Engine Optimization",
-        description:
-            "We help you rank your website on the first page of Google and other search engines",
-
-        icon: <img src="assets/seo.svg" loading="lazy" alt="seo" />,
-    },
+   
     // Add more services here...
 ];

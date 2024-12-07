@@ -4,12 +4,12 @@ import { Button } from "./ui/moving-border";
 import { Head, Link, usePage } from "@inertiajs/react";
 
 const navItems = [
-    // {
-    //     id: 2,
-    //     isActive: false,
-    //     text: "Services",
-    //     link: "#",
-    // },
+    {
+        id: 2,
+        isActive: false,
+        text: "Services",
+        link: "/services",
+    },
     // {
     //     id: 3,
     //     isActive: false,
@@ -37,7 +37,6 @@ const Navbar = () => {
 
     return (
         <>
-            
             <div
                 onClick={() => closeNavbar()}
                 aria-hidden="true"
