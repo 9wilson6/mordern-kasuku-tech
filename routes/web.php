@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -20,6 +21,7 @@ Route::get('/services', function () {
 Route::get('/blog', function () {
     return Inertia::render('Blog/BlogPage');
 });
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::post('/contact', [MailController::class, 'contact'])->name('contact.send');
 

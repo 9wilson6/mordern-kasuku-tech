@@ -9,6 +9,8 @@ import WhyUs from "@/Components/WhyUs";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
 import { tr } from "framer-motion/client";
+import BlogSection from "./Blog/BlogSection";
+
 
 export default function Welcome({
     auth,
@@ -59,6 +61,8 @@ export default function Welcome({
                 showMore={true}
             />
 
+            <BlogSection />
+
             <LogoCloud />
             <WhyUs />
             <Contact />
@@ -99,6 +103,6 @@ const servicesData = [
 
         icon: <img src="assets/seo.svg" loading="lazy" alt="seo" />,
     },
-   
+
     // Add more services here...
 ];

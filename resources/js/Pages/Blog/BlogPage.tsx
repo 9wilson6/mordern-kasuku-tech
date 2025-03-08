@@ -1,99 +1,128 @@
-import React from "react";
-import BlogCard from "./BlogCard"; // Import the new BlogCard component
-import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
 
-const BlogPage: React.FC = () => {
-    const blogs = [
-        {
-            category: "CATEGORY",
-            title: "The Catalyzer",
-            description:
-                "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            imgSrc: "https://dummyimage.com/720x400",
-            views: "1.2K",
-            comments: "6",
-        },
-        {
-            category: "CATEGORY",
-            title: "The 400 Blows",
-            description:
-                "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            imgSrc: "https://dummyimage.com/721x401",
-            views: "1.2K",
-            comments: "6",
-        },
-        {
-            category: "CATEGORY",
-            title: "Shooting Stars",
-            description:
-                "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            imgSrc: "https://dummyimage.com/722x402",
-            views: "1.2K",
-            comments: "6",
-        },
-    ];
 
-    return (
-        <section className="text-gray-600 body-font bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_0.1px,transparent_1px)] bg-[size:14px_24px]">
-            <Navbar />
-            <div className="container px-5 py-24 mx-auto">
-                {/* Title and description section */}
-                <div className="flex flex-col text-center w-full mb-20">
-                    <h2 className="flex justify-center items-center text-heading text-2xl lg:text-4xl font-bold text-blue">
-                        From our latest Blog Post
-                    </h2>
-                    <hr className="my-8 h-0.3 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-                    <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-green">
-                        At KasukuTech, we’re passionate about empowering
-                        businesses through software innovation. Explore our blog
-                        for practical advice, success stories, and cutting-edge
-                        trends in creating impactful software solutions for
-                        businesses of all sizes.
-                    </p>
-                </div>
+import { Input } from "@/Components/ui/input"
+import { Search } from "lucide-react"
+import BlogCard from "./BlogCard"
+import { Badge } from "@/Components/ui/badge"
+import TopBlogs from "@/Components/TopBlogs"
+import { Button } from "@/Components/ui/button"
 
-                {/* Blog listing section */}
-                <div className="flex flex-wrap -m-4">
-                    {blogs.map((blog, index) => (
-                        <div className="p-4 md:w-1/3" key={index}>
-                            <BlogCard
-                                title={blog.title}
-                                description={blog.description}
-                                imgSrc={blog.imgSrc}
-                            />
-                        </div>
-                    ))}
-                </div>
 
-                {/* Button to go to all blogs */}
-                <div className="flex w-full items-center justify-center pt-16">
-                    <a
-                        href="#_"
-                        className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green rounded-md hover:bg-green-400 sm:w-auto sm:mb-0"
-                        data-primary="green-400"
-                        data-rounded="rounded-2xl"
-                        data-primary-reset="{}"
-                    >
-                        See all articles
-                        <svg
-                            className="w-4 h-4 ml-1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                    </a>
-                </div>
+export default function BlogPage() {
+  // In a real app, you would fetch this data from your CMS or API
+  const allBlogs = [
+    {
+      category: "DEVELOPMENT",
+      title: "The Catalyzer",
+      description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "12 Jun 2023",
+      slug: "the-catalyzer",
+    },
+    {
+      category: "DESIGN",
+      title: "The 400 Blows",
+      description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "24 May 2023",
+      slug: "the-400-blows",
+    },
+    {
+      category: "TECHNOLOGY",
+      title: "Shooting Stars",
+      description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "10 Apr 2023",
+      slug: "shooting-stars",
+    },
+    {
+      category: "BUSINESS",
+      title: "Neptune",
+      description:
+        "Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "8 Mar 2023",
+      slug: "neptune",
+    },
+    {
+      category: "DEVELOPMENT",
+      title: "The 400 Blows",
+      description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "15 Feb 2023",
+      slug: "the-400-blows-2",
+    },
+    {
+      category: "DESIGN",
+      title: "Holden Caulfield",
+      description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+      imgSrc: "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg",
+      date: "5 Jan 2023",
+      slug: "holden-caulfield",
+    },
+  ]
+
+  const topBlogs = allBlogs.slice(0, 3)
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="container px-4 py-12 md:px-6 md:py-16 lg:py-20 max-w-7xl mx-auto">
+        <div className="flex flex-col space-y-8 ">
+          {/* Header */}
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">Our Blog</h1>
+            <p className="max-w-[700px] text-muted-foreground md:text-xl">
+              Insights, thoughts, and stories from the KasukuTech team
+            </p>
+          </div>
+
+          {/* Search bar */}
+          <div className="flex w-full max-w-md items-center space-x-2">
+            <Input type="text" placeholder="Search articles..." className="flex-1" />
+            <Button type="submit">
+              <Search className="h-4 w-4 mr-2" />
+              Search
+            </Button>
+          </div>
+
+          {/* Main content area with sidebar */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
+            {/* Main blog listing */}
+            <div className="lg:col-span-2 col-span-1 ">
+              <div className="grid  gap-4 sm:grid-cols-2 w-full justify-center items-center mx-auto">
+                {allBlogs.map((blog, index) => (
+                  <BlogCard
+                    key={index}
+                    title={blog.title}
+                    description={blog.description}
+                    imgSrc={blog.imgSrc}
+                    category={blog.category}
+                    date={blog.date}
+                    slug={blog.slug}
+                  />
+                ))}
+              </div>
             </div>
-            <Footer />
-        </section>
-    );
-};
 
-export default BlogPage;
+            {/* Sidebar */}
+            <div className="space-y-4 max-w-md w-full justify-center items-center mx-auto">
+              <TopBlogs blogs={topBlogs} />
+
+              {/* Categories */}
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold mb-4">Categories</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-black text-white hover:bg-black/90">DEVELOPMENT</Badge>
+                  <Badge className="bg-black text-white hover:bg-black/90">DESIGN</Badge>
+                  <Badge className="bg-black text-white hover:bg-black/90">TECHNOLOGY</Badge>
+                  <Badge className="bg-black text-white hover:bg-black/90">BUSINESS</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+

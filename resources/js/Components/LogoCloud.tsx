@@ -31,15 +31,15 @@ const sliderItems = [
 
 const LogoCloud = () => {
     return (
-        <section>
+        <section className="bg-green-100">
             {/* Container */}
             <div className="container sm:px-10 md:px-12 lg:px-5 px-5 font-inter mx-auto h-auto w-full py-12">
                 {/* Title */}
-                <h5 className="text-center text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl pb-12">
+                <h2 className="text-3xl font-bold tracking-tighter text-slate-800 md:text-4xl xl:text-5xl text-center pb-12">
                     Brands that have trusted us
-                </h5>
+                </h2>
                 {/* Content */}
-                <div className="bg-gray-50 py-16">
+                <div className=" py-16">
                     <InfiniteSlider gap={24} reverse>
                         {sliderItems.map((item, index) => (
                             <a href={item.href} key={index} target="_blank">

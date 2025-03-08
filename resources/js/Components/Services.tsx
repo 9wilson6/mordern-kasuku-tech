@@ -30,7 +30,7 @@ const Services: React.FC<ServicesProps> = ({
                         <div className="text-center">
                             {showMore ? (
                                 <>
-                                    <h2 className="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
+                                    <h2 className="text-3xl font-bold tracking-tighter text-slate-800 md:text-4xl xl:text-5xl">
                                         {heading}
                                     </h2>
                                     <p className="mt-4 text-base text-gray-700 sm:mt-8">
@@ -109,7 +109,7 @@ const Services: React.FC<ServicesProps> = ({
                 </div>
             </div>
             <div className="sm:col-gap-12 row-gap-12 md:gap mt-10  ">
-                <section className="relative bg-green-200 py-14 text-blue-900 ">
+                <section className="relative bg-green-200 py-10 text-blue-900 ">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <div className="mb-4 inline-flex h-12 w-12 text-blue-700">
