@@ -21,7 +21,7 @@ export default function TopBlogs({ blogs }: TopBlogsProps) {
         <div className="space-y-4">
           {blogs.map((blog, index) => (
             <Link key={index} href={`/blog/${blog.slug}`} className="flex items-start space-x-4 group">
-              <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-md">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md">
                 <img
                   src={blog.imgSrc || "/placeholder.svg"}
                   alt={blog.title}

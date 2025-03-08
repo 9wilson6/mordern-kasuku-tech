@@ -64,7 +64,7 @@ const WhyUs: React.FC = () => {
     return (
         <section className="py-10">
             <div className="">
-                <h2 className="bg-gradient-to-r text-center pb-10 from-pink-500  to-indigo-500 bg-clip-text text-transparent text-3xl font-bold tracking-tighter text-slate-800 md:text-4xl xl:text-5xl">
+                <h2 className="bg-linear-to-r text-center pb-10 from-pink-500  to-indigo-500 bg-clip-text text-transparent text-3xl font-bold tracking-tighter text-slate-800 md:text-4xl xl:text-5xl">
                     Why KasukuTech?
                 </h2>
                 <div className="relative py-10">

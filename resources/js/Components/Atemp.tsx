@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
             name="name"
             placeholder="John Doe"
             required
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-hidden focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
@@ -37,7 +37,7 @@ const ContactForm: React.FC = () => {
             name="email"
             placeholder="john@example.com"
             required
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-hidden focus:border-blue-500"
           />
         </div>
         <div className="mb-6">
@@ -52,12 +52,12 @@ const ContactForm: React.FC = () => {
             name="message"
             rows={4}
             placeholder="How can we help you?"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-hidden focus:border-blue-500"
           ></textarea>
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-hidden focus:shadow-outline-blue"
         >
           Send Message
         </button>

@@ -71,7 +71,7 @@ const TeamSection: React.FC = () => {
     return (
         <div className="font-sans mb-20">
             {/* Header with gradient background */}
-            <div className="h-60 w-full bg-gradient-to-r from-green-300 via-red-500 to-blue-600"></div>
+            <div className="h-60 w-full bg-linear-to-r from-green-300 via-red-500 to-blue-600"></div>
 
             {/* Team section */}
             <div className="max-w-5xl mx-auto -mt-48 px-6">
@@ -88,7 +88,7 @@ const TeamSection: React.FC = () => {
                         >
                             <BorderTrail
                                 size={120}
-                                className="bg-gradient-to-l from-blue-500 via-green-500 to-red-500"
+                                className="bg-linear-to-l from-blue-500 via-green-500 to-red-500"
                             ></BorderTrail>
                             <div className="lg:min-h-[250px]">
                                 <img

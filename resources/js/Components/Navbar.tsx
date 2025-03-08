@@ -64,7 +64,7 @@ const Navbar = () => {
                         <button
                             onClick={toggleNavbar}
                             aria-label="toggle navbar"
-                            className="outline-none border-r border-r-gray-200 pr-3 relative py-3 flex flex-col justify-center items-center gap-1"
+                            className="outline-hidden border-r border-r-gray-200 pr-3 relative py-3 flex flex-col justify-center items-center gap-1"
                         >
                             {/* Top line */}
                             <span
