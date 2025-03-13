@@ -55,22 +55,23 @@ export default function BlogPage() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar />
+            <div className="flex h-84 bg-linear-to-r/shorter from-indigo-500 to-teal-400  flex-col justify-center items-center space-y-4 py-14">
+                <div className="space-y-4 max-w-6xl  text-white">
+                    <h1 className="text-4xl text-center font-bold tracking-tight md:text-5xl">
+                        Welcome to our Blog
+                    </h1>
+                    <p className=" text-white text-center md:text-xl">
+                        At KasukuTech, we're passionate about empowering
+                        businesses through software innovation. Explore our blog
+                        for practical advice, success stories, and cutting-edge
+                        trends.
+                    </p>
+                </div>
+            </div>
             <div className="container px-4 py-12 md:px-6 md:py-16 lg:py-20 max-w-7xl mx-auto">
                 <div className="flex flex-col space-y-8">
                     {/* Header */}
-                    <div className="flex  bg-linear-to-r/shorter from-indigo-500 to-teal-400 flex-col items-center space-y-4 py-14">
-                        <div className="space-y-4 text-white">
-                            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-                                Welcome to our Blog
-                            </h1>
-                            <p className="max-w-[700px]  text-white md:text-xl">
-                                At KasukuTech, we're passionate about empowering
-                                businesses through software innovation. Explore
-                                our blog for practical advice, success stories,
-                                and cutting-edge trends.
-                            </p>
-                        </div>
-                    </div>
+
                     {/* Search bar */}
                     {/* <div className="flex w-full max-w-md items-center space-x-2">
                         <Input
@@ -164,7 +165,9 @@ export default function BlogPage() {
                             </div>
                         </div>
                     ) : (
-                        <p className="text-center text-gray-500">No blogs found.</p>
+                        <p className="text-center text-gray-500">
+                            No blogs found.
+                        </p>
                     )}
                 </div>
 
