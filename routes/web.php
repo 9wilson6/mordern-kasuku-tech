@@ -3,13 +3,25 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Blog;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    // Fetch the latest 3 published blogs
+    $latestBlogs = Blog::where('status', 'published')
+        ->orderBy('created_at', 'desc')
+        ->take(3)
+        ->get();
+
+    // Render the welcome page and pass the latest blogs
+    return Inertia::render('Welcome', [
+
+        'latestBlogs' => $latestBlogs,
+    ]);
 });
 
 Route::get('/about', function () {
@@ -18,16 +30,19 @@ Route::get('/about', function () {
 Route::get('/services', function () {
     return Inertia::render('Services');
 });
-Route::get('/blog', function () {
-    return Inertia::render('Blog/BlogPage');
-});
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
 
 Route::post('/contact', [MailController::class, 'contact'])->name('contact.send');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/dashboard', function () {
+    return Inertia::render('Admin/Dashboard');
+})->middleware(['auth', 'role:admin'])->name('admin.dashboard');
+Route::get('/staff/dashboard', function () {
+    return Inertia::render('Staff/Dashboard');
+})->middleware(['auth', 'role:staff'])->name('staff.dashboard');
+Route::get('/client/dashboard', function () {
+    return Inertia::render('Client/Dashboard');
+})->middleware(['auth', 'role:client'])->name('client.dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,3 +53,4 @@ Route::middleware(['auth'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/blog.php';

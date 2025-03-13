@@ -48,7 +48,7 @@ function Hero() {
                                 Showcase your brand to the world
                             </span>
                         </h1>
-                        <p className="mx-auto mb-5 max-w-lg text-sm  text-gray-500 sm:text-xl md:mb-6 lg:mb-8">
+                        <div className="mx-auto mb-5 max-w-lg text-sm  text-gray-500 sm:text-xl md:mb-6 lg:mb-8">
                             <TextLoop interval={5} className="text-base">
                                 {sentences.map((sentence, index) => (
                                     <span
@@ -66,7 +66,7 @@ function Hero() {
                                     </span>
                                 ))}
                             </TextLoop>
-                        </p>
+                        </div>
                         {/* Hero Button */}
                         <div className="flex items-stretch justify-center mb-4">
                             <a
@@ -84,9 +84,9 @@ function Hero() {
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
                                             d="M13 10V3L4 14h7v7l9-11h-7z"
                                         ></path>
                                     </svg>

@@ -33,7 +33,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended($this->redirectUser(Auth::user()->role));
     }
 
     /**
@@ -48,5 +49,18 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    private function redirectUser($role)
+    {
+        switch ($role) {
+            case 'admin':
+                return '/admin/dashboard';
+            case 'staff':
+                return '/staff/dashboard';
+
+            default:
+                return '/client/dashboard';
+        }
     }
 }

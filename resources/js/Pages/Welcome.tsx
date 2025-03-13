@@ -16,52 +16,42 @@ export default function Welcome({
     auth,
     laravelVersion,
     phpVersion,
-}: PageProps<{ laravelVersion: string; phpVersion: string }>) {
-    const handleImageError = () => {
-        document
-            .getElementById("screenshot-container")
-            ?.classList.add("hidden!");
-        document.getElementById("docs-card")?.classList.add("row-span-1!");
-        document
-            .getElementById("docs-card-content")
-            ?.classList.add("flex-row!");
-        document.getElementById("background")?.classList.add("hidden!");
-    };
+    latestBlogs, // ✅ Receive latest blogs from Laravel
+}: PageProps<{ laravelVersion: string; phpVersion: string; latestBlogs: any[] }>) {
 
     return (
         <div className="h-full w-full">
             <Head title="Welcome to KasukuTech">
-                <link rel="canonical" href="https://kasukutech.com/" />
-
-                <title>KasukuTech - Innovative Software Solutions</title>
-                <meta
-                    name="description"
-                    content="KasukuTech provides top-notch software solutions including mobile apps, scalable web applications, SEO, marketing, AI, ML, cybersecurity, cloud solutions, IT consulting, and more."
-                />
-                <meta
-                    name="keywords"
-                    content="mobile apps, web applications, SEO, digital marketing, branding, AI, machine learning, cybersecurity, cloud solutions, IT consulting, KasukuTech, software solutions"
-                />
+            <link rel="canonical" href="https://kasukutech.com/" />
+            <title>KasukuTech - Innovative Software Solutions</title>
+            <meta
+                name="description"
+                content="KasukuTech provides top-notch software solutions..."
+            />
+            <meta
+                name="keywords"
+                content="mobile apps, web applications, SEO, digital marketing..."
+            />
             </Head>
 
             <Navbar />
-
             <Hero />
             <CallToAction
-                title="Let us bring your Vision to Reality"
-                description="As a team of professional web developers, we strive to see your Vision into Reality."
-                buttonLink={route("register")}
-                buttonLabel="Contact Us"
+            title="Let us bring your Vision to Reality"
+            description="As a team of professional web developers, we strive to see your Vision into Reality."
+            buttonLink={route("register")}
+            buttonLabel="Contact Us"
             />
 
             <Services
-                heading="Our Services"
-                subheading="We design digital experiences that matter."
-                services={servicesData}
-                showMore={true}
+            heading="Our Services"
+            subheading="We design digital experiences that matter."
+            services={servicesData}
+            showMore={true}
             />
 
-            <BlogSection />
+            {/* ✅ Pass latestBlogs to BlogSection if not empty */}
+            {latestBlogs.length > 0 && <BlogSection latestBlogs={latestBlogs} />}
 
             <LogoCloud />
             <WhyUs />
@@ -70,7 +60,6 @@ export default function Welcome({
         </div>
     );
 }
-
 const servicesData = [
     {
         title: "User Interface & User Experience",

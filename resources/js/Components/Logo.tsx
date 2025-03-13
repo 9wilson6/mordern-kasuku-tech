@@ -9,7 +9,7 @@ const Logo = () => {
                     <div>Kasuku </div>
                     <svg
                         width="42px"
-                        height="px"
+                        height="42px"
                         viewBox="-2.4 -2.4 28.80 28.80"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ const Logo = () => {
                     >
                         <g
                             id="SVGRepo_bgCarrier"
-                            stroke-width="0"
+                            strokeWidth="0"
                             transform="translate(6.96,6.96), scale(0.42)"
                         >
                             <path
@@ -29,8 +29,8 @@ const Logo = () => {
                         </g>
                         <g
                             id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         ></g>
                         <g id="SVGRepo_iconCarrier">
                             {" "}

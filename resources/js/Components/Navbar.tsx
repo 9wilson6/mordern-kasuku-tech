@@ -10,12 +10,12 @@ const navItems = [
         text: "Services",
         link: "/services",
     },
-    // {
-    //     id: 3,
-    //     isActive: false,
-    //     text: "Blog",
-    //     link: "/blog",
-    // },
+    {
+        id: 3,
+        isActive: false,
+        text: "Blog",
+        link: "/blogs",
+    },
     {
         id: 4,
         isActive: false,
@@ -92,9 +92,7 @@ const Navbar = () => {
                         </button>
                     </div>
                     <div className="">
-                        <a href="#">
-                            <Logo />
-                        </a>
+                        <Logo />
                     </div>
 
                     <div

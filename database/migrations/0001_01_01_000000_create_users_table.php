@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -16,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('role', ['admin', 'staff', 'client'])->default('client');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
@@ -35,6 +37,34 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        // Automatically register an admin user
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' => 'contact@kasukutech.com',
+            'password' => bcrypt('admin_jx&L3w&ouxPa'),
+            'role' => 'admin',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        // Automatically register an admin user
+        DB::table('users')->insert([
+            'name' => 'Staff',
+            'email' => 'staff@kasukutech.com',
+            'password' => bcrypt('staff_jx&L3w&ouxPa'),
+            'role' => 'staff',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        // Automatically register an admin user
+        DB::table('users')->insert([
+            'name' => 'Client',
+            'email' => 'client@kasukutech.com',
+            'password' => bcrypt('client_jx&L3w&ouxPa'),
+            'role' => 'client',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /**
