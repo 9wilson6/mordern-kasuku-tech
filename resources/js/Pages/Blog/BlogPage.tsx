@@ -85,95 +85,101 @@ export default function BlogPage() {
                     </div> */}
 
                     {/* Main content area with sidebar */}
-                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-                        {/* Blog Listing */}
-                        <div className="lg:col-span-2 md:col-span-2 ">
-                            {/* Active Filter Header */}
-                            {currentCategory && (
-                                <div className="mb-4 flex items-center justify-center space-x-2">
-                                    <h2 className="text-xl font-bold">
-                                        Showing results for:{" "}
-                                        <span className="text-blue-500">
-                                            {currentCategory}
-                                        </span>
-                                    </h2>
-                                    <Link
-                                        href="/blogs"
-                                        className="text-sm text-gray-500 underline"
-                                    >
-                                        Clear filter
-                                    </Link>
-                                </div>
-                            )}
+                    {blogs.data.length > 0 ? (
+                        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+                            {/* Blog Listing */}
+                            <div className="lg:col-span-2 md:col-span-2 ">
+                                {/* Active Filter Header */}
+                                {currentCategory && (
+                                    <div className="mb-4 flex items-center justify-center space-x-2">
+                                        <h2 className="text-xl font-bold">
+                                            Showing results for:{" "}
+                                            <span className="text-blue-500">
+                                                {currentCategory}
+                                            </span>
+                                        </h2>
+                                        <Link
+                                            href="/blogs"
+                                            className="text-sm text-gray-500 underline"
+                                        >
+                                            Clear filter
+                                        </Link>
+                                    </div>
+                                )}
 
-                            <div className="grid gap-4 sm:grid-cols-2">
-                                {blogs.data.map((blog, index) => (
-                                    <BlogCard
-                                        key={index}
-                                        title={blog.title}
-                                        content={blog.content}
-                                        imgSrc={
-                                            blog.thumbnail
-                                                ? `/storage/${blog.thumbnail}`
-                                                : "/placeholder.png"
-                                        }
-                                        category={blog.category}
-                                        date={blog.published_at}
-                                        slug={blog.slug}
-                                        views={blog.views}
-                                        published_at={blog.published_at}
-                                    />
-                                ))}
+                                <div className="grid gap-4 sm:grid-cols-2">
+                                    {blogs.data.map((blog, index) => (
+                                        <BlogCard
+                                            key={index}
+                                            title={blog.title}
+                                            content={blog.content}
+                                            imgSrc={
+                                                blog.thumbnail
+                                                    ? `/storage/${blog.thumbnail}`
+                                                    : "/placeholder.png"
+                                            }
+                                            category={blog.category}
+                                            date={blog.published_at}
+                                            slug={blog.slug}
+                                            views={blog.views}
+                                            published_at={blog.published_at}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Sidebar */}
+                            <div className="space-y-4 md:col-span-2 lg:col-span-1 bg-gray-50 p-3 rounded-lg">
+                                <TopBlogs blogs={topViewedBlogs} />
+
+                                {/* Dynamic Categories with clickable links */}
+                                <Card className="rounded-lg  bg-card p-6 border border-gray-200">
+                                    <h3 className="text-lg font-semibold mb-4">
+                                        Categories
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {categories && categories.length > 0 ? (
+                                            categories.map((cat, index) => (
+                                                <Link
+                                                    key={index}
+                                                    href={`/blogs/category/${encodeURIComponent(
+                                                        cat
+                                                    )}`}
+                                                    className="cursor-pointer"
+                                                >
+                                                    <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+                                                        <Tag
+                                                            size={14}
+                                                            className="mr-1"
+                                                        />
+                                                        {cat}
+                                                    </Badge>
+                                                </Link>
+                                            ))
+                                        ) : (
+                                            <p>No categories found</p>
+                                        )}
+                                    </div>
+                                </Card>
                             </div>
                         </div>
-
-                        {/* Sidebar */}
-                        <div className="space-y-4 md:col-span-2 lg:col-span-1 bg-gray-50 p-3 rounded-lg">
-                            <TopBlogs blogs={topViewedBlogs} />
-
-                            {/* Dynamic Categories with clickable links */}
-                            <Card className="rounded-lg  bg-card p-6 border border-gray-200">
-                                <h3 className="text-lg font-semibold mb-4">
-                                    Categories
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {categories && categories.length > 0 ? (
-                                        categories.map((cat, index) => (
-                                            <Link
-                                                key={index}
-                                                href={`/blogs/category/${encodeURIComponent(
-                                                    cat
-                                                )}`}
-                                                className="cursor-pointer"
-                                            >
-                                                <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
-                                                    <Tag
-                                                        size={14}
-                                                        className="mr-1"
-                                                    />
-                                                    {cat}
-                                                </Badge>
-                                            </Link>
-                                        ))
-                                    ) : (
-                                        <p>No categories found</p>
-                                    )}
-                                </div>
-                            </Card>
-                        </div>
-                    </div>
+                    ) : (
+                        <p className="text-center text-gray-500">No blogs found.</p>
+                    )}
                 </div>
 
                 {/* Pagination */}
-                <div className="flex mx-auto justify-center items-center mt-14 w-full h-24 overflow-hidden overflow-x-auto">
-                    <Pagination
-                        pagination={{
-                            current_page: pagination.current_page,
-                            last_page: pagination.last_page,
-                            links: blogs.links,
-                        }}
-                    />
-                </div>
+                {blogs.links.length > 0 && (
+                    <div className="flex mx-auto justify-center items-center mt-14 w-full h-24 overflow-hidden overflow-x-auto">
+                        <Pagination
+                            pagination={{
+                                current_page: pagination.current_page,
+                                last_page: pagination.last_page,
+                                links: blogs.links,
+                            }}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );
