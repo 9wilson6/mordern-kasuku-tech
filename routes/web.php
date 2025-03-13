@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return Inertia::render('About');
-});
+})->name('about');
 Route::get('/services', function () {
     return Inertia::render('Services');
 });
@@ -54,3 +54,7 @@ Route::middleware(['auth'])->group(function () {
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/blog.php';
+
+Route::fallback(function () {
+    return Inertia::render('NotFound');
+});

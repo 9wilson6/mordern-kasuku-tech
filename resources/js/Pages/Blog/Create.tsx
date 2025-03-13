@@ -171,7 +171,12 @@ const CreateBlog = () => {
           {/* Featured Image Upload */}
           <div>
             <label className="block text-sm font-medium">Featured Image:</label>
-            <input type="file" accept="image/*" onChange={handleFeaturedImageUpload} />
+            <input
+              className="border w-full p-2 rounded-sm focus:border-blue-500"
+              type="file"
+              accept="image/*"
+              onChange={handleFeaturedImageUpload}
+            />
             {featuredImagePreview && (
               <img
                 src={featuredImagePreview}

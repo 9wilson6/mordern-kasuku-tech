@@ -39,7 +39,7 @@ export default function Welcome({
             <CallToAction
             title="Let us bring your Vision to Reality"
             description="As a team of professional web developers, we strive to see your Vision into Reality."
-            buttonLink={route("register")}
+            buttonLink={route("about")}
             buttonLabel="Contact Us"
             />
 

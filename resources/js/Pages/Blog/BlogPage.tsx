@@ -1,4 +1,4 @@
-import { usePage, Link } from "@inertiajs/react";
+import { usePage, Link, Head } from "@inertiajs/react";
 import BlogCard from "./BlogCard";
 import TopBlogs from "@/Components/TopBlogs";
 import { Input } from "@/Components/ui/input";
@@ -46,6 +46,14 @@ export default function BlogPage() {
 
     return (
         <div className="min-h-screen bg-background">
+            <Head>
+                <title>KasukuTech Blog</title>
+                <meta
+                    name="description"
+                    content="At KasukuTech, we're passionate about empowering businesses through software innovation. Explore our blog for practical advice, success stories, and cutting-edge trends."
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Navbar />
             <div className="container px-4 py-12 md:px-6 md:py-16 lg:py-20 max-w-7xl mx-auto">
                 <div className="flex flex-col space-y-8">
