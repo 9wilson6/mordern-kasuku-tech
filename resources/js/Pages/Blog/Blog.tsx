@@ -14,7 +14,7 @@ interface Blog {
     meta: string;
     meta_keywords: string;
     content: string;
-    coverImage: string;
+    thumbnail: string;
     category: Array<string>;
     author: string;
     authorImage: string;
@@ -35,6 +35,7 @@ interface BlogPageProps {
     relatedBlogs: RelatedBlog[];
     categories: string[]; // All available categories for the sidebar
 }
+
 
 export default function BlogPostPage() {
     // Casting the page props to our defined interface
@@ -77,8 +78,8 @@ export default function BlogPostPage() {
                             <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                                 <img
                                     src={
-                                        blog.coverImage
-                                            ? `/storage/${blog.coverImage}`
+                                        blog.thumbnail
+                                            ? `/storage/${blog.thumbnail}`
                                             : "/placeholder.png"
                                     }
                                     alt={blog.title}
@@ -117,7 +118,7 @@ export default function BlogPostPage() {
                                 <div className="flex flex-wrap items-center justify-between text-sm text-gray-500 gap-4 py-6">
                                     <span className="text-gray-400 font-thin inline-flex items-center leading-none text-sm">
                                         <CiCalendarDate className="w-4 h-4 mr-1" />
-                                        {moment(blog.created_at).fromNow()}
+                                        {moment(blog.published_at).fromNow()}
                                     </span>
                                     <span className="flex items-center">
                                         <Eye size={14} className="mr-1" />
