@@ -142,7 +142,7 @@ export default function BlogPostPage() {
                                     title: b.title,
                                     slug: b.slug,
                                     content: blog.content,
-                                    coverImage: blog.coverImage,
+                                    coverImage: blog.thumbnail,
                                     category: blog.category,
                                     author: blog.author,
                                     published_at: b.published_at,
