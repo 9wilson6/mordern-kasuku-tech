@@ -20,3 +20,7 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+/DO_NOT_UPLOAD_HERE
+/error_log
+/public_html
+
