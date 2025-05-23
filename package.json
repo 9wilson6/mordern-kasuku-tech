@@ -36,6 +36,7 @@
         "clsx": "^2.1.1",
         "dompurify": "^3.2.4",
         "easymde": "^2.20.0",
+        "embla-carousel-react": "^8.5.2",
         "framer-motion": "^11.11.17",
         "github-markdown-css": "^5.8.1",
         "lucide-react": "^0.446.0",
