@@ -8,7 +8,7 @@ const sliderItems = [
         alt: "diamonds fashion logo",
     },
     {
-        href: "https://www.perfectgrader.com/",
+        href: "https://www.perfectgraders.com/",
         src: "assets/perfectgrader.png",
         alt: "perfect grader logo",
     },
@@ -18,8 +18,8 @@ const sliderItems = [
         alt: "credible tutors logo",
     },
     {
-        href: "",
-        src: "assets/perfect-experts.png",
+        href: "https://www.primeafricanestates.com/",
+        src: "assets/Prime african estates.png",
         alt: "perfect experts logo",
     },
     {
