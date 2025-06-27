@@ -7,6 +7,11 @@ const sliderItems = [
         src: "assets/diamondsFashion.png",
         alt: "diamonds fashion logo",
     },
+      {
+        href: "https://www.primeafricanestates.com/",
+        src: "assets/Prime african estates.png",
+        alt: "perfect experts logo",
+    },
     {
         href: "https://www.perfectgraders.com/",
         src: "assets/perfectgrader.png",
@@ -17,11 +22,7 @@ const sliderItems = [
         src: "assets/credibletutors.png",
         alt: "credible tutors logo",
     },
-    {
-        href: "https://www.primeafricanestates.com/",
-        src: "assets/Prime african estates.png",
-        alt: "perfect experts logo",
-    },
+  
     {
         href: "https://www.african-realestate.com/",
         src: "assets/african-realestate.png",
